@@ -1,0 +1,3 @@
+add_executable(Vertex_Integrator_Generator_test "Vertex_Integrator_Generator.cpp")
+target_link_libraries(Vertex_Integrator_Generator_test PUBLIC CLG_Utils OpenCL::OpenCL OpenCL::Headers)
+add_test(NAME Vertex_Integrator_Generator_test COMMAND Vertex_Integrator_Generator_test)
