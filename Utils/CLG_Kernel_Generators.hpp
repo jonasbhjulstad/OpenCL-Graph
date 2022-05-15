@@ -2,30 +2,27 @@
 #define CLG_KERNEL_GENERATORS_HPP
 #include <string>
 #include <vector>
-
-std::string CLG_generate_function_dispatcher(std::vector<std::string>& functions, const std::string& args)
+namespace Generator
 {
-	std::string res;
-	res += "if (dispatch_id == 0)\n{\n";
-	res += functions[0] + "(" + args + ");\n}\n";
+const std::vector<std::string> ODE_INTEGRATOR_INPUT_TYPES = {"float*", "float*", "uint", "constant float*"};
+const char* ODE_INTEGRATOR_INPUT_DEF = "float* x_current, float* x_dot, uint Nx, constant float* param";
+const char* ODE_INTEGRATOR_INPUT = "x_current, x_dot, Nx, param";
 
 
-	for (size_t i = 0; i < functions.size(); i++)
-	{
-		res += std::string("else if (dispatch_id == ") + std::to_string(i) + ")\n{\n";
-		res += functions.at(i) + "(" + args + ");\n}\n";
-	}
-	return res;
-}
 
-std::string CLG_generate_vertex_integrator(std::vector<std::string>& functions)
+
+std::string CLG_generate_ODE_dynamics(std::string& fname, std::string& fn_body)
 {
-	const std::string args = "x_current, x_next, Nx, param";
-	std::string res;
-	res += "void vertex_integrate(" + args + ")\n{\n";
-	res += CLG_generate_function_dispatcher(functions, args);
-	res += "}\n";
-	return res;
+    std::string res;
+    std::string fname_upper = fname;
+    for (auto &c: fname_upper) c = std::toupper(c);
+    res +=  "#ifndef " + fname_upper + "_CL\n";
+    res +=  "#define " + fname_upper + "_CL\n";
+    res +=  "void " + fname + "(" + ODE_INTEGRATOR_INPUT + ")\n{\n";
+    res += fn_body;
+    res +=  "}\n";
+    res +=  "#endif\n";
+    return res;
 }
-
+}
 #endif

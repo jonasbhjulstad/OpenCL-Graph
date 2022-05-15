@@ -5,16 +5,31 @@
 #include <CL/cl.h>
 #include <CLG_Kernel_Generators.hpp>
 #include <CLG_DefaultInstance.hpp>
+#include <CLG_FilePaths.hpp>
 int main()
 {
+    std::string kernel_dir = std::string(CLG_TEST_DIR) + "Kernels/";
     std::string kernel_fname = "test_kernel.cl";
+
+    std::ofstream outfile(kernel_dir + kernel_fname);
+
     std::vector<std::string> functions = {"fun_1", "fun_2", "fun_3"};
-
-    std::ofstream outfile(kernel_fname);
-
-    outfile << CLG_generate_vertex_integrator(functions);
+    // outfile << CLG_generate_vertex_integrator(functions);
 
     outfile.close();
+
+    std::vector<std::string> functions_vec = {"fun_1", "fun_2", "fun_3"};
+
+    std::string body = "float dt = param[0];\n";
+    body += "float alpha = param[1];\n";
+    body += "float beta = param[2];\n";
+
+    for (auto& fun: functions_vec)
+    {
+        outfile.open(kernel_dir + fun);
+        // outfile << CLG_generate_template_integrator(fun, body);
+        outfile.close();
+    }
 
 
     CLG_Instance clInstance = clDefaultInitialize();
@@ -25,7 +40,7 @@ int main()
     assert(err == CL_SUCCESS);
 
     /*Step 6: Build program. */
-    int status = clBuildProgram(clInstance.program, 1, clInstance.device_ids.data(), , NULL, NULL);
+    int status = clBuildProgram(clInstance.program, 1, clInstance.device_ids.data(), NULL, NULL, NULL);
 
     assert(err == CL_SUCCESS);
 
@@ -43,14 +58,14 @@ int main()
     /*Step 8: Create kernel object */
     cl_kernel kernel = clCreateKernel(clInstance.program, "SIR_Compute_Stochastic", &err);
     assert(err == CL_SUCCESS);
-    /*Step 9: Sets Kernel arguments.*/
-    // status = clSetKernelArg(kernel, 0, sizeof(size_t), &num);
-    status = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&seedBuffer);
-    status = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&x0Buffer);
-    status = clSetKernelArg(kernel, 2, sizeof(cl_mem), (void *)&outputBuffer);
-    // status = clSetKernelArg(kernel, 3,  trajectorySize, NULL);
-    status = clSetKernelArg(kernel, 3, sizeof(float), (void *)&dt);
-    status = clSetKernelArg(kernel, 4, sizeof(uint), (void *)&Nt);
-    status = clSetKernelArg(kernel, 5, sizeof(cl_mem), &paramBuffer);
+    // /*Step 9: Sets Kernel arguments.*/
+    // // status = clSetKernelArg(kernel, 0, sizeof(size_t), &num);
+    // status = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&seedBuffer);
+    // status = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&x0Buffer);
+    // status = clSetKernelArg(kernel, 2, sizeof(cl_mem), (void *)&outputBuffer);
+    // // status = clSetKernelArg(kernel, 3,  trajectorySize, NULL);
+    // status = clSetKernelArg(kernel, 3, sizeof(float), (void *)&dt);
+    // status = clSetKernelArg(kernel, 4, sizeof(uint), (void *)&Nt);
+    // status = clSetKernelArg(kernel, 5, sizeof(cl_mem), &paramBuffer);
 
 }
