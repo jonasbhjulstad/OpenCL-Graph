@@ -86,8 +86,7 @@ CLG_Instance clDefaultInitialize(uint device_type = CL_DEVICE_TYPE_GPU, bool ver
 }
 cl_program clLoadProgram(std::string filename, cl_context& context, int& err, std::string prependData = "")
 {
-	std::string sourceStr;
-	int status = convertToString(filename.c_str(), sourceStr);
+	std::string sourceStr = convertToString(filename.c_str());
 	const std::string fullSourcestr = prependData + sourceStr;
 	const char* fullSource = fullSourcestr.c_str();
 	const size_t strSize = fullSourcestr.size();
