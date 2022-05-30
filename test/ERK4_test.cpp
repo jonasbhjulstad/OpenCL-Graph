@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 	
 
     int err = 0;
-    std::string programBinary = convertToString((std::string(pwd) + "kernel.spv").c_str());
+    std::string programBinary = convertToString((std::string(pwd) + "ERK.spv").c_str());
     long unsigned int programSize = sizeof(char)*programBinary.length();
     clInstance.program = clCreateProgramWithIL(clInstance.context, (const void*) programBinary.data(), sizeof(char)*programBinary.length(), &err);
     assert(err == CL_SUCCESS);

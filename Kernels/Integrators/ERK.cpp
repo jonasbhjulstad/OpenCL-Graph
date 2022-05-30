@@ -80,7 +80,7 @@
 //         xdot[0] = -beta*xk[0]*xk[1]/N_pop;
 //         xdot[1] = beta*xk[0]*xk[1]/N_pop - alpha*xk[1];
 //         xdot[2] = alpha*xk[1];
-//     }
+//     }`
 // };
 
 // // Example that uses find_min in a kernel with array of int4.

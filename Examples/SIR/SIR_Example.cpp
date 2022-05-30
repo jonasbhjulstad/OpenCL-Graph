@@ -13,6 +13,10 @@
 #define FAILURE 1
 #include <CLG.hpp>
 
+#ifndef CLG_SPIRV_COMPILER
+#define CLG_SPIRV_COMPILER "clang-14"
+#endif
+
 void write_SIR_trajectories(std::ofstream &outfile, float *x_traj, size_t Nt, size_t N_SingleRun_Trajectories)
 {
     //write all trajectories in x_traj to csv
@@ -26,6 +30,26 @@ void write_SIR_trajectories(std::ofstream &outfile, float *x_traj, size_t Nt, si
     }
 }
 
+std::string kernel_file = std::string(CLG_KERNEL_DIR) + "/Epidemiological/SIR_Compute_Stochastic";
+
+
+void compile_kernel(size_t Nt, float SIR_Binomial_Tolerance = 1e-2, CLG_PRNG_TYPE prng_type = CLG_PRNG_TYPE_KISS99)
+{
+    std::string spirv_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -target64 -cl-kernel-arg-info -cl-std=clc++2021 " + kernel_file + ".clcpp -o " + kernel_file + ".spv";
+    std::string preprocessor_definitions = " -D PRNG_generator=" + CLG_PRNG_class_strmap.at(prng_type) + 
+     + " -D SIR_Binomial_Tolerance=" + std::to_string(SIR_Binomial_Tolerance) + "f"
+     " -D N_TRAJECTORY_TIMESTEPS=" + std::to_string(Nt);
+
+    std::string kernel_include_directories = " -I " + std::string(CLG_KERNEL_DIR) + "/Distributions/" + 
+    " -I " + std::string(CLG_GENERATOR_DIR) + 
+    " -I " + std::string(CLG_KERNEL_DIR) + "/Epidemiological/";
+
+
+    int res = std::system((spirv_compile_command + preprocessor_definitions + kernel_include_directories).c_str());
+    std::cout << "system Error code: " << res << std::endl;
+}
+
+
 int main(int argc, char *argv[])
 {
 
@@ -36,34 +60,27 @@ int main(int argc, char *argv[])
 
     CLG_Instance clInstance = clDefaultInitialize();
 
-    int err = 0;
-    clInstance.program = clLoadProgram((epidemiological_kernel_dir + "SIR_Compute_Stochastic.cl").c_str(), clInstance.context, err);
+    std::string kernel_file = epidemiological_kernel_dir + "SIR_Compute_Stochastic";
 
+    constexpr uint Nt = 100;
+
+    compile_kernel(Nt);
+
+    int err = 0;
+    std::string programBinary = convertToString((kernel_file + ".spv").c_str());
+    long unsigned int programSize = sizeof(char)*programBinary.length();
+
+
+    clInstance.program = clCreateProgramWithIL(clInstance.context, (const void*) programBinary.data(), sizeof(char)*programBinary.length(), &err);
     assert(err == CL_SUCCESS);
 
     std::string build_options = "-I " + cl_generator_dir + " -I " + epidemiological_kernel_dir;
     /*Step 6: Build program. */
     int status = clBuildProgram(clInstance.program, 1, clInstance.device_ids.data(), build_options.c_str(), NULL, NULL);
-    if (status == CL_BUILD_PROGRAM_FAILURE)
-    {
-        // Determine the size of the log
-        size_t log_size;
-        clGetProgramBuildInfo(clInstance.program, clInstance.device_ids[0], CL_PROGRAM_BUILD_LOG, 0, NULL, &log_size);
-
-        // Allocate memory for the log
-        char *log = (char *)malloc(log_size);
-
-        // Get the log
-        clGetProgramBuildInfo(clInstance.program, clInstance.device_ids[0], CL_PROGRAM_BUILD_LOG, log_size, log, NULL);
-
-        // Print the log
-        printf("%s\n", log);
-    }
-
+    CLG_print_build_log(status, clInstance);
     /* Parameter/Buffer initialization */
     constexpr size_t N_trajectories = 10 * 1024;
     size_t N_SingleRun_Trajectories = (N_trajectories > clInstance.max_work_group_size) ? clInstance.max_work_group_size : N_trajectories;
-    constexpr uint Nt = 100;
 
     size_t N_runs = std::ceil(N_trajectories / N_SingleRun_Trajectories);
 
@@ -108,11 +125,9 @@ int main(int argc, char *argv[])
     cl_kernel kernel = clCreateKernel(clInstance.program, "SIR_Compute_Stochastic", &err);
     assert(err == CL_SUCCESS);
     /*Step 9: Sets Kernel arguments.*/
-    // status = clSetKernelArg(kernel, 0, sizeof(size_t), &num);
     status = clSetKernelArg(kernel, 0, sizeof(cl_mem), (void *)&seedBuffer);
     status = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&x0Buffer);
     status = clSetKernelArg(kernel, 2, sizeof(cl_mem), (void *)&outputBuffer);
-    // status = clSetKernelArg(kernel, 3,  trajectorySize, NULL);
     status = clSetKernelArg(kernel, 3, sizeof(float), (void *)&dt);
     status = clSetKernelArg(kernel, 4, sizeof(uint), (void *)&Nt);
     status = clSetKernelArg(kernel, 5, sizeof(cl_mem), &paramBuffer);
@@ -120,7 +135,7 @@ int main(int argc, char *argv[])
     assert(status == CL_SUCCESS);
 
     std::ofstream outfile;
-    outfile.open(DATA_PATH + "x_traj.csv");
+    outfile.open(DATA_PATH + "/SIR_Stochastic/x_traj.csv");
     std::mt19937 rng;
     std::uniform_int_distribution<ulong> dist(0, UINT64_MAX);
 
@@ -154,7 +169,7 @@ int main(int argc, char *argv[])
     outfile.close();
 
     //write parameters to csv with names
-    outfile.open(DATA_PATH + "param.csv");
+    outfile.open(DATA_PATH + "/SIR_Stochastic/param.csv");
     outfile << "alpha,beta,N_pop,N_trajectories,Nt,dt\n";
     outfile << alpha << "," << beta << "," << N_pop << "," << N_trajectories << "," << Nt << "," << dt << "\n";
     outfile.close();
@@ -166,7 +181,7 @@ int main(int argc, char *argv[])
     }
 
     //write time vector to csv
-    outfile.open(DATA_PATH + "tvec.csv");
+    outfile.open(DATA_PATH + "/SIR_Stochastic/tvec.csv");
     for (int i = 0; i < Nt + 1; i++)
     {
         outfile << tvec[i] << "\n";

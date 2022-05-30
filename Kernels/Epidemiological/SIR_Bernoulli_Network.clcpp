@@ -1,0 +1,122 @@
+#define PRNG_GENERATOR PRNG_LCG6432
+#pragma OPENCL EXTENSION cl_khr_fp64 : disable
+#include <Distributions.clcpp>
+
+// Requires:
+// #define N_NETWORK_TIMESTEPS
+// #define N_NETWORK_VERTICES
+// #define N_NETWORK_EDGES
+
+#define N_STATES_NETWORK_TRAJECTORY N_NETWORK_TIMESTEPS*N_NETWORK_VERTICES
+
+enum SIR_STATE{SIR_SUSCEPTIBLE = 1, SIR_INFECTED = 2, SIR_RECOVERED = 3};
+
+template <uint N>
+void assignVec_g(global uint* a, uint* b)
+{
+    for (int i = 0; i < N; i++)
+    {
+        a[i] = b[i];
+    }
+}
+
+template <uint N>
+void assignVec_g(uint* a, constant uint* b)
+{
+    for (int i = 0; i < N; i++)
+    {
+        a[i] = b[i];
+    }
+}
+
+template <uint N>
+void assignVec(uint* a, uint b)
+{
+    for (int i = 0; i < N; i++)
+    {
+        a[i] = b;
+    }
+}
+
+void countPopulation(uint* x_traj, uint* v_next, uint t)
+{
+    for (uint i = 0; i < N_NETWORK_VERTICES; i++)
+    {
+      if (v_next[i] == SIR_SUSCEPTIBLE)
+      {
+        x_traj[3*t] += 1;
+      }
+      else if(v_next[i] == SIR_INFECTED)
+      {
+        x_traj[3*t + 1] += 1;
+      }
+      else if(v_next[i] == SIR_RECOVERED)
+      {
+        x_traj[3*t + 2] += 1;
+      }
+    }
+}
+
+
+__kernel void SIR_Compute_Network(constant uint* v0,
+constant uint* source_nodes,
+constant uint* target_nodes,
+float bernoulli_p_I,
+float bernoulli_p_R,
+constant ulong* seed,
+global uint* v_traj_g,
+global uint* x_traj_g)
+{
+  uint gID = get_global_id(0);
+  PRNG_GENERATOR rng(seed[gID]);
+  // Trajectory Initialization
+  uint x_traj[3*N_NETWORK_TIMESTEPS];
+  uint v_traj[N_STATES_NETWORK_TRAJECTORY + N_NETWORK_VERTICES];
+
+  assignVec_g<N_NETWORK_VERTICES>(v_traj, v0);
+  assignVec<3*N_NETWORK_TIMESTEPS>(x_traj, 0);
+
+  for (uint t = 0; t < N_NETWORK_TIMESTEPS; t++)
+  {
+    uint* v_current = &v_traj[t*N_NETWORK_VERTICES];
+    uint* v_next = &v_traj[(t+1)*N_NETWORK_VERTICES];
+
+    for (uint i = 0; i < N_NETWORK_VERTICES; i++)
+    {
+        if ((v_current[i] == SIR_INFECTED) && (BernoulliTrial(rng,bernoulli_p_R)))
+        {
+          v_next[i] = SIR_RECOVERED;
+        }
+        else
+        {
+          v_next[i] = v_current[i];
+        }
+    }
+
+    for (uint i = 0; i < N_NETWORK_EDGES; i++)
+    {
+        uint* source_current = &v_current[source_nodes[i]];
+        uint* target_current = &v_current[target_nodes[i]];
+        uint* source_next = &v_next[source_nodes[i]];
+        uint* target_next = &v_next[target_nodes[i]];
+
+        if ((*source_current == SIR_INFECTED) && (*target_current == SIR_SUSCEPTIBLE))
+        {
+            if (BernoulliTrial(rng, bernoulli_p_I))
+            {
+                *target_next = SIR_INFECTED;
+            }
+        }
+    }
+    countPopulation(x_traj, v_next, t);
+    if (gID == 1)
+    {
+      printf("t: %u, x_traj: %u, %u, %u\n", t, x_traj[3*t], x_traj[3*t + 1], x_traj[3*t + 2]);
+    } 
+
+  }
+
+  assignVec_g<3*N_NETWORK_TIMESTEPS>(&x_traj_g[3*N_NETWORK_TIMESTEPS*gID], x_traj);
+  assignVec_g<N_STATES_NETWORK_TRAJECTORY>(&v_traj_g[N_STATES_NETWORK_TRAJECTORY*gID], &v_traj[N_NETWORK_VERTICES]);
+
+}

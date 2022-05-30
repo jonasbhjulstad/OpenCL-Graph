@@ -11,9 +11,11 @@ message(STATUS ${OpenMP_DIR})
 # set(OpenMP_libomp_LIBRARY ${OpenMP_CXX_LIB_NAMES} CACHE STRING "" FORCE)
 # set(OpenMP_libgomp_LIBRARY ${OpenMP_CXX_LIB_NAMES} CACHE STRING "" FORCE)
 # set(OpenMP_libiomp5_LIBRARY ${OpenMP_CXX_LIB_NAMES} CACHE STRING "" FORCE)
+find_package(LAPACK REQUIRED)
 find_package(igraph REQUIRED)
 
 set(CMAKE_CXX_STANDARD_REQUIRED 17)
+set(CMAKE_CXX_STANDARD 17)
 enable_testing()
 FetchContent_Declare(randomCL_repo
 GIT_REPOSITORY https://github.com/bstatcomp/RandomCL.git

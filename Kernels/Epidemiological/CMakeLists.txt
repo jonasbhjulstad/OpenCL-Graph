@@ -1,0 +1,2 @@
+add_library(CLG_Epidemiological_Kernel_Headers INTERFACE)
+target_include_directories(CLG_Epidemiological_Kernel_Headers INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}")

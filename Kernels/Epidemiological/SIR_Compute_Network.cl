@@ -1,7 +1,7 @@
 #define PRNG_STATE mt19937_state
 #define PRNG_SEED_FN mt19937_seed
 #define PRNG_FLOAT_FN mt19937_float
-#include "../Distributions/Distributions.cl"
+#include "../Distributions/Distributions.clcpp"
 
 #define SIR_NETWORK_CONNECTION_BERNOULLI 1
 #define SIR_NETWORK_CONNECTION_SIR_STOCHASTIC 2

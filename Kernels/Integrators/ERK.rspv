@@ -1,41 +1,18 @@
-119734787 65536 393230 16 0 
-2 Capability Addresses 
-2 Capability Linkage 
-2 Capability Kernel 
-5 ExtInstImport 1 "OpenCL.std" 
-3 MemoryModel 1 2 
-4 EntryPoint 6 12 "foo" 
-3 Source 3 300000 
-3 Name 5 "foo" 
-3 Name 13 "x0" 
-5 Decorate 5 LinkageAttributes "foo" Export 
-4 Decorate 9 Alignment 4 
-4 Decorate 10 Alignment 4 
-4 TypeInt 3 32 0 
-4 Constant 3 11 0 
-2 TypeVoid 2 
-4 TypeFunction 4 2 3 
-4 TypePointer 8 7 3 
-
-
-5 Function 2 5 2 4 
-3 FunctionParameter 3 6 
-
-2 Label 7 
-4 Variable 8 9 7 
-4 Variable 8 10 7 
-5 Store 9 6 2 4 
-5 Store 10 11 2 4 
-1 Return 
-
-1 FunctionEnd 
-
-5 Function 2 12 2 4 
-3 FunctionParameter 3 13 
-
-2 Label 14 
-5 FunctionCall 2 15 5 13 
-1 Return 
-
-1 FunctionEnd 
-
+OpCapability Addresses
+OpCapability Kernel
+%1 = OpExtInstImport "OpenCL.std"
+OpMemoryModel Physical32 OpenCL
+OpEntryPoint Kernel %6 "foo"
+OpSource OpenCL_C 300000
+OpName %x0 "x0"
+OpName %entry "entry"
+OpDecorate %x0 FuncParamAttr NoCapture
+%void = OpTypeVoid
+%float = OpTypeFloat 32
+%_ptr_CrossWorkgroup_float = OpTypePointer CrossWorkgroup %float
+%5 = OpTypeFunction %void %_ptr_CrossWorkgroup_float
+%6 = OpFunction %void Pure %5
+%x0 = OpFunctionParameter %_ptr_CrossWorkgroup_float
+%entry = OpLabel
+OpReturn
+OpFunctionEnd
