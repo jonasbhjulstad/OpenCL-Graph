@@ -79,10 +79,15 @@ int main(int argc, char *argv[])
     }
     std::cout << "Compiling kernel with " << N_nodes << " nodes, " << N_edges << " edges and " << N_workers << " workers\nInfected: " << N_infected << std::endl;
     
+    CLG_Instance clInstance = clDefaultInitialize();
+    char device_name[100];
+    clGetDeviceInfo(clInstance.device_ids[0], CL_DEVICE_NAME, sizeof(char)*100, device_name, NULL);
+    std::cout << "Using device: " << device_name << std::endl;
     SIR_Bernoulli_Network_Kernel kernel(N_workers);
     kernel.compile(N_nodes, N_edges, Nt);
     
-    CLG_Instance clInstance = clDefaultInitialize();
+    //print available cl devices
+
     cl_uint status = kernel.build_program(clInstance);
     
     if (status == CL_BUILD_PROGRAM_FAILURE)
@@ -101,7 +106,7 @@ int main(int argc, char *argv[])
     }
 
     std::vector<cl_ulong> seeds(N_workers);
-    std::uniform_int_distribution<ulong> dist(0, UINT64_MAX);
+    std::uniform_int_distribution<cl_ulong> dist(0, UINT64_MAX);
 
     for (int i = 0; i < N_workers; i++)
     {

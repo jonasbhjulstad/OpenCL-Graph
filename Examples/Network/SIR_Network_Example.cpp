@@ -114,11 +114,11 @@ int main(int argc, char *argv[])
     /* Parameter/Buffer initialization */
     constexpr size_t N_trajectories = 8;
     size_t N_SingleRun_Trajectories = (N_trajectories > clInstance.max_work_group_size) ? clInstance.max_work_group_size : N_trajectories;
-    constexpr uint Nt = 10;
+    constexpr cl_uint Nt = 10;
 
      size_t N_runs = std::ceil(N_trajectories / N_SingleRun_Trajectories);
 
-    ulong seeds[N_SingleRun_Trajectories];
+    cl_ulong seeds[N_SingleRun_Trajectories];
 
     float dt = 5.;
     float p_init_infected = 0.1;
@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
     std::vector<float> adjacency_vector = get_flat_AdjMat(G);
     std::vector<float> x0 = generate_initial_infection_states(N_nodes, p_init_infected);
 
-    size_t seedBufferSize = N_SingleRun_Trajectories * sizeof(ulong);
+    size_t seedBufferSize = N_SingleRun_Trajectories * sizeof(cl_ulong);
     size_t trajectorySize = 3 * (Nt + 1) * sizeof(float) * N_nodes;
     size_t trajectoryBufferSize = trajectorySize * N_SingleRun_Trajectories;
 
@@ -179,7 +179,7 @@ int main(int argc, char *argv[])
     status = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&adjMatrixBuffer);
     status = clSetKernelArg(kernel, 4, sizeof(float), &infection_p);
     status = clSetKernelArg(kernel, 5, sizeof(float), &recovery_p);
-    status = clSetKernelArg(kernel, 6, sizeof(uint), (void *)&Nt);
+    status = clSetKernelArg(kernel, 6, sizeof(cl_uint), (void *)&Nt);
     status = clSetKernelArg(kernel, 7, sizeof(size_t), (void *)&N_nodes);
 
     
@@ -188,7 +188,7 @@ int main(int argc, char *argv[])
     std::ofstream outfile;
     outfile.open(DATA_PATH + "x_traj.csv");
     std::mt19937_64 rng;
-    std::uniform_int_distribution<ulong> dist(0, UINT64_MAX);
+    std::uniform_int_distribution<cl_ulong> dist(0, UINT64_MAX);
 
     for (int i = 0; i < N_runs; i++)
     {

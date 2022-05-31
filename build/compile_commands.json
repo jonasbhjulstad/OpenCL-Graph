@@ -1,0 +1,27 @@
+[
+{
+  "directory": "C:/Users/jonas/Documents/OpenCL-Graph/build/Examples/SIR",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SIR_Example.dir/includes_CXX.rsp -g -fopenmp -o CMakeFiles\\SIR_Example.dir\\SIR_Example.cpp.obj -c C:\\Users\\jonas\\Documents\\OpenCL-Graph\\Examples\\SIR\\SIR_Example.cpp",
+  "file": "C:/Users/jonas/Documents/OpenCL-Graph/Examples/SIR/SIR_Example.cpp"
+},
+{
+  "directory": "C:/Users/jonas/Documents/OpenCL-Graph/build/Examples/Network",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SIR_Network_Example.dir/includes_CXX.rsp -g -fopenmp -o CMakeFiles\\SIR_Network_Example.dir\\SIR_Network_Example.cpp.obj -c C:\\Users\\jonas\\Documents\\OpenCL-Graph\\Examples\\Network\\SIR_Network_Example.cpp",
+  "file": "C:/Users/jonas/Documents/OpenCL-Graph/Examples/Network/SIR_Network_Example.cpp"
+},
+{
+  "directory": "C:/Users/jonas/Documents/OpenCL-Graph/build/Examples/PRNG",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/PRNG_Example.dir/includes_CXX.rsp -g -fopenmp -o CMakeFiles\\PRNG_Example.dir\\PRNG_Example.cpp.obj -c C:\\Users\\jonas\\Documents\\OpenCL-Graph\\Examples\\PRNG\\PRNG_Example.cpp",
+  "file": "C:/Users/jonas/Documents/OpenCL-Graph/Examples/PRNG/PRNG_Example.cpp"
+},
+{
+  "directory": "C:/Users/jonas/Documents/OpenCL-Graph/build/Examples/SIR_Bernoulli",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/SIR_Bernoulli_test.dir/includes_CXX.rsp -g -fopenmp -o CMakeFiles\\SIR_Bernoulli_test.dir\\SIR_Bernoulli_test.cpp.obj -c C:\\Users\\jonas\\Documents\\OpenCL-Graph\\Examples\\SIR_Bernoulli\\SIR_Bernoulli_test.cpp",
+  "file": "C:/Users/jonas/Documents/OpenCL-Graph/Examples/SIR_Bernoulli/SIR_Bernoulli_test.cpp"
+},
+{
+  "directory": "C:/Users/jonas/Documents/OpenCL-Graph/build/test",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/ERK4_test.dir/includes_CXX.rsp -g -fopenmp -o CMakeFiles\\ERK4_test.dir\\ERK4_test.cpp.obj -c C:\\Users\\jonas\\Documents\\OpenCL-Graph\\test\\ERK4_test.cpp",
+  "file": "C:/Users/jonas/Documents/OpenCL-Graph/test/ERK4_test.cpp"
+}
+]

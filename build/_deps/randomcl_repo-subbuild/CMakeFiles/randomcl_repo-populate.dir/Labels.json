@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/CMakeFiles/randomcl_repo-populate"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/CMakeFiles/randomcl_repo-populate.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/CMakeFiles/randomcl_repo-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/jonas/Documents/OpenCL-Graph/build/_deps/randomcl_repo-subbuild/randomcl_repo-populate-prefix/src/randomcl_repo-populate-stamp/randomcl_repo-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"randomcl_repo-populate"
+		],
+		"name" : "randomcl_repo-populate"
+	}
+}

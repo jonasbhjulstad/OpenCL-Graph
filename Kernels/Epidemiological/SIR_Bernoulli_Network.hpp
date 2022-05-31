@@ -5,7 +5,7 @@
 #include <vector>
 
 #ifndef CLG_SPIRV_COMPILER
-#define CLG_SPIRV_COMPILER "clang-14"
+#define CLG_SPIRV_COMPILER "C:\\msys64\\clang64\\bin\\clang.exe"
 #endif
 
 class SIR_Bernoulli_Network_Kernel
@@ -29,8 +29,9 @@ SIR_Bernoulli_Network_Kernel(size_t _N_workers): N_workers(_N_workers){}
 
 static void compile(size_t N_nodes, size_t N_edges, size_t Nt)
 {
-    std::string kernel_file = std::string(CLG_KERNEL_DIR) + "/Epidemiological/SIR_Bernoulli_Network";
-    std::string spirv_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -target spirv64 -cl-std=clc++2021 " + kernel_file + ".clcpp -o " + kernel_file + ".spv";
+    std::string kernel_file = std::string(CLG_KERNEL_DIR) + "Epidemiological/SIR_Bernoulli_Network";
+    std::string spirv_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -target spirv64 -cl-std=clc++2021 \"" + kernel_file + ".clcpp\" -o \"" + kernel_file + ".spv\"";
+    std::cout << spirv_compile_command << std::endl;
     std::string preprocessor_definitions = " -D N_NETWORK_TIMESTEPS=" + std::to_string(Nt) + 
     " -D N_NETWORK_VERTICES=" + std::to_string(N_nodes) + 
     " -D N_NETWORK_EDGES=" + std::to_string(N_edges);

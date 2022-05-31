@@ -115,15 +115,15 @@ int main(int argc, char *argv[])
     cl_kernel kernel;
     kernel = clCreateKernel(clInstance.program, "foo", &err);
     assert(err == CL_SUCCESS);
-    uint num_args = 0;
-    size_t numargSize = sizeof(uint);
+    cl_uint num_args = 0;
+    size_t numargSize = sizeof(cl_uint);
     status = clGetKernelInfo(kernel, CL_KERNEL_NUM_ARGS, numargSize, &num_args, &numargSize);
     std::cout << "number of arguments: " << num_args << std::endl;
     
     //get kernel argument names
     std::vector<std::string> arg_names;
     std::string arg_name;
-    for (uint i = 0; i < num_args; i++)
+    for (cl_uint i = 0; i < num_args; i++)
     {
         size_t arg_name_size = 0;
         status = clGetKernelArgInfo(kernel, i, CL_KERNEL_ARG_NAME, 0, NULL, &arg_name_size);
@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
         arg_names.push_back(std::string(arg_name));
     }
 
-    for (uint i = 0; i < num_args; i++)
+    for (cl_uint i = 0; i < num_args; i++)
     {
         std::cout << arg_names[i] << std::endl;
     }
@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
     //get kernel argument type names
     std::vector<std::string> arg_type_names;
     std::string arg_type_name;
-    for (uint i = 0; i < num_args; i++)
+    for (cl_uint i = 0; i < num_args; i++)
     {
         size_t arg_type_name_size = 0;
         status = clGetKernelArgInfo(kernel, i, CL_KERNEL_ARG_TYPE_NAME, 0, NULL, &arg_type_name_size);
@@ -150,7 +150,7 @@ int main(int argc, char *argv[])
         arg_type_names.push_back(std::string(arg_type_name));
     }
     //print arg_type_names
-    for (uint i = 0; i < num_args; i++)
+    for (cl_uint i = 0; i < num_args; i++)
     {
         std::cout << arg_type_names[i] << std::endl;
     }

@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 
     std::string kernel_file = epidemiological_kernel_dir + "SIR_Compute_Stochastic";
 
-    constexpr uint Nt = 100;
+    constexpr cl_uint Nt = 100;
 
     compile_kernel(Nt);
 
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
 
     size_t N_runs = std::ceil(N_trajectories / N_SingleRun_Trajectories);
 
-    ulong seeds[N_SingleRun_Trajectories];
+    cl_ulong seeds[N_SingleRun_Trajectories];
 
     float dt = 5.;
 
@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
     param[1] = beta;
     param[2] = N_pop;
 
-    size_t seedBufferSize = N_SingleRun_Trajectories * sizeof(ulong);
+    size_t seedBufferSize = N_SingleRun_Trajectories * sizeof(cl_ulong);
     size_t trajectorySize = 3 * (Nt + 1) * sizeof(float);
     size_t trajectoryBufferSize = trajectorySize * N_SingleRun_Trajectories;
 
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
     status = clSetKernelArg(kernel, 1, sizeof(cl_mem), (void *)&x0Buffer);
     status = clSetKernelArg(kernel, 2, sizeof(cl_mem), (void *)&outputBuffer);
     status = clSetKernelArg(kernel, 3, sizeof(float), (void *)&dt);
-    status = clSetKernelArg(kernel, 4, sizeof(uint), (void *)&Nt);
+    status = clSetKernelArg(kernel, 4, sizeof(cl_uint), (void *)&Nt);
     status = clSetKernelArg(kernel, 5, sizeof(cl_mem), &paramBuffer);
 
     assert(status == CL_SUCCESS);
@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
     std::ofstream outfile;
     outfile.open(DATA_PATH + "/SIR_Stochastic/x_traj.csv");
     std::mt19937 rng;
-    std::uniform_int_distribution<ulong> dist(0, UINT64_MAX);
+    std::uniform_int_distribution<cl_ulong> dist(0, UINT64_MAX);
 
     for (int i = 0; i < N_runs; i++)
     {

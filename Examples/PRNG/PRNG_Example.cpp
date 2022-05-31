@@ -56,9 +56,9 @@ void CompileExecuteWithGenerator(CLG_Instance& clInstance, CLG_PRNG_TYPE rng_typ
     /* Parameter/Buffer initialization */
     constexpr size_t workgroupSize = 256;
 
-    uint seeds[workgroupSize];
+    cl_uint seeds[workgroupSize];
     float rng_result[Nfloat_generated * workgroupSize];
-    size_t seedBufferSize = workgroupSize * sizeof(uint);
+    size_t seedBufferSize = workgroupSize * sizeof(cl_uint);
     size_t outputBufferSize = Nfloat_generated * workgroupSize*sizeof(float);
 
     assert(outputBufferSize < clInstance.global_mem_size);
@@ -82,7 +82,7 @@ void CompileExecuteWithGenerator(CLG_Instance& clInstance, CLG_PRNG_TYPE rng_typ
     outfile.open(std::string(CLG_DATA_DIR) + "/PRNG/result_" + CLG_PRNG_strmap.at(rng_type) + ".csv");
     // std::cout << std::string(CLG_DATA_DIR) + "/PRNG/result_" + CLG_PRNG_strmap.at(rng_type) + ".csv" << std::endl;
     std::mt19937 rng;
-    std::uniform_int_distribution<uint> dist(0, UINT32_MAX);
+    std::uniform_int_distribution<cl_uint> dist(0, UINT32_MAX);
 
     size_t N_runs = 4;
     std::cout << "Generating numbers for " << CLG_PRNG_strmap.at(rng_type) << std::endl;

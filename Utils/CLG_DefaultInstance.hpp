@@ -26,7 +26,7 @@ struct CLG_Instance
 	size_t max_work_group_size;
 };
 
-CLG_Instance clDefaultInitialize(uint device_type = CL_DEVICE_TYPE_GPU, bool verbose = false)
+CLG_Instance clDefaultInitialize(cl_uint device_type = CL_DEVICE_TYPE_GPU, bool verbose = false)
 {
     CLG_Instance clInstance;
     	/*Step1: Getting platforms and choose an available one.*/

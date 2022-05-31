@@ -1,0 +1,1 @@
+-I"C:/Users/jonas/Documents/OpenCL-Graph/Utils" -I"C:/Users/jonas/Documents/OpenCL-Graph/build/Utils" -I"C:/Users/jonas/Documents/OpenCL-Graph/Kernels/Epidemiological" -isystem C:/PROGRA~1/NVIDIA~2/CUDA/v11.6/include
