@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     cl_uint N_workers =256;
     cl_uint Nt = 100;
 
-    float p_ER = 1.0;
+    float p_ER = .01;
     igraph_t graph;
     igraph_erdos_renyi_game(&graph, IGRAPH_ERDOS_RENYI_GNP, N_nodes, p_ER, IGRAPH_UNDIRECTED, 0);
 
@@ -56,8 +56,8 @@ int main(int argc, char *argv[])
     }
 
     float p_I_0 = .1;
-    float bernoulli_p_I = .0001;
-    float bernoulli_p_R = .001;
+    float bernoulli_p_I = .1;
+    float bernoulli_p_R = .01;
 
     //Generate N_worker random uints
     std::random_device rd;
@@ -142,17 +142,34 @@ int main(int argc, char *argv[])
     std::ofstream f;
     for (cl_uint i = 0; i < N_workers; i++)
     {
-        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network_Test/v_traj_" + std::to_string(i) + ".csv");
+        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/v_traj_" + std::to_string(i) + ".csv");
         for (cl_uint j = 0; j < Nt; j++)
         {
-            for (cl_uint k = 0; k < N_nodes; k++)
+            f << v_traj[i*N_nodes*Nt + j*N_nodes];
+            for (cl_uint k = 1; k < N_nodes; k++)
             {
-                f << v_traj[i*N_nodes*Nt + j*N_nodes + k] << ",";
+                f << ", " <<  v_traj[i*N_nodes*Nt + j*N_nodes + k];
             }
             f << "\n";
         }
         f.close();
     }
+
+    //write the state of each node to separate files
+    for (cl_uint i = 0; i < N_nodes; i++)
+    {
+        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/v_" + std::to_string(i) + ".csv");
+        for (cl_uint j = 0; j < Nt; j++)
+        {
+            for (cl_uint k = 0; k < N_workers; k++)
+            {
+                f << v_traj[k*N_nodes*Nt + j*N_nodes + i] << ",";
+            }
+            f << "\n";
+        }
+        f.close();
+    }
+
 
     cl_uint x_traj_offset = 3*Nt;
 
@@ -162,7 +179,7 @@ int main(int argc, char *argv[])
     }
     for (cl_uint i = 0; i < N_workers; i++)
     {
-        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network_Test/x_traj_" + std::to_string(i) + ".csv");
+        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/x_traj_" + std::to_string(i) + ".csv");
         for (cl_uint j = 0; j < Nt; j++)
         {
             f << x_traj[3*j + i*3*Nt] << "," << x_traj[3*j + 1 + i*3*Nt] << "," << x_traj[3*j + 2 + i*3*Nt] << "\n";
@@ -171,20 +188,35 @@ int main(int argc, char *argv[])
     }
 
 
-    igraph_matrix_t pos;
-    igraph_matrix_init(&pos, N_nodes, 2);
-    igraph_vector_t weights;
-    igraph_vector_fill(&weights, 1.0);
-    //get kamada_kawai layout
-    igraph_layout_kamada_kawai(&graph, &pos, false, 500, 0, N_nodes, &weights, NULL, NULL, NULL, NULL);
 
+    igraph_matrix_t pos;
+    igraph_matrix_init(&pos, N_edges/2, 2);
+    igraph_vector_t weights;
+
+    igraph_vector_init(&weights, N_edges/2);
+
+    igraph_vector_fill(&weights, 1.0f);
+    //get kamada_kawai layout
+    // igraph_layout_kamada_kawai(&graph, &pos, false, 500, 0, N_nodes, &weights, NULL, NULL, NULL, NULL);
+    igraph_layout_gem(&graph, &pos, false, 500, N_nodes, 1/10.f, sqrt(N_nodes));
     //write pos to file
-    f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network_Test/pos.csv");
+    f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/pos.csv");
     for (int i = 0; i < N_nodes; i++)
     {
         f << MATRIX(pos,i,0) << "," << MATRIX(pos,i,1) << "\n";
     }
     f.close();
+
+    // //write edges to file
+    f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/edges.csv");
+    // for (int i = 0; i < N_edges; i++)
+    // {
+    //     f << edges_to[i] << " " << edges_from[i] << " {} \n";
+    // }
+    // f.close();
+    FILE* file = fopen((std::string(CLG_DATA_DIR) + "/Bernoulli_Network/edges.csv").c_str(), "w");
+    igraph_write_graph_edgelist(&graph, file);
+    fclose(file);
 
 
     return SUCCESS;

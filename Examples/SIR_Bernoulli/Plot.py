@@ -1,24 +1,22 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import os
+data_path = "/home/deb/Documents/OpenCL-Graph/build/data/Bernoulli_Network/"
 
+# x_traj_csv = np.genfromtxt(data_path + "x_traj.csv", delimiter=", ")
+x_fnames = []
+for file in os.listdir(data_path):
+    if file.startswith("x_traj"):
+        x_fnames.append(data_path + file)
 
-data_path = "/home/deb/Documents/OpenCL-Graph/build/data/SIR_Bernoulli_Network/"
+x_trajs = [np.genfromtxt(fname, delimiter=',') for fname in x_fnames]
 
-dfs = [pd.read_csv(data_path + "SIR_Bernoulli_Network_" + str(i) + ".csv") for i in range(0, 100)]
-
-x_traj_csv = np.genfromtxt(data_path + "x_traj.csv", delimiter=", ")
-
-params = pd.read_csv(data_path + "param.csv")
-print(params.columns)
-
-x_trajs = np.split(x_traj_csv, params['N_trajectories'][0], axis=0)
 S = [x[:,0] for x in x_trajs]
 I = [x[:,1] for x in x_trajs]
 R = [x[:,2] for x in x_trajs]
 
 x_grouped = [S, I, R]
-t = np.genfromtxt(data_path + "tvec.csv")
 
 x = np.linspace(0, 10, 200)
 all_curves = np.array([np.sin(x * np.random.normal(1, 0.1)) * np.random.normal(1, 0.1) for _ in range(1000)])
@@ -28,7 +26,7 @@ confidence_interval2 = 80
 confidence_interval3 = 50
 
 fig, ax = plt.subplots(3,1)
-
+t = np.arange(0, x_trajs[0].shape[0] + 1)
 
 
 print("Number of trajectories:", len(x_trajs))
@@ -62,36 +60,4 @@ plt.show()
 
 
 
-import numpy as np
-import matplotlib.pyplot as plt; plt.close('all')
-import networkx as nx
-from matplotlib.animation import FuncAnimation
 
-def animate_nodes(G, node_colors, pos=None, *args, **kwargs):
-
-    # define graph layout if None given
-    if pos is None:
-        pos = nx.spring_layout(G)
-
-    # draw graph
-    nodes = nx.draw_networkx_nodes(G, pos, *args, **kwargs)
-    edges = nx.draw_networkx_edges(G, pos, *args, **kwargs)
-    plt.axis('off')
-
-    def update(ii):
-        # nodes are just markers returned by plt.scatter;
-        # node color can hence be changed in the same way like marker colors
-        nodes.set_array(node_colors[ii])
-        return nodes,
-
-    fig = plt.gcf()
-    animation = FuncAnimation(fig, update, interval=50, frames=len(node_colors), blit=True)
-    return animation
-
-total_nodes = 10
-graph = nx.complete_graph(total_nodes)
-time_steps = 20
-node_colors = np.random.randint(0, 100, size=(time_steps, total_nodes))
-
-animation = animate_nodes(graph, node_colors)
-animation.save('test.gif', writer='imagemagick', savefig_kwargs={'facecolor':'white'}, fps=0.5)

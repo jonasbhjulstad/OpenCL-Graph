@@ -4,8 +4,14 @@
 #include <CLG.hpp>
 #include <vector>
 
+#ifdef WIN32
 #ifndef CLG_SPIRV_COMPILER
 #define CLG_SPIRV_COMPILER "C:\\msys64\\clang64\\bin\\clang.exe"
+#endif
+#else
+#ifndef CLG_SPIRV_COMPILER
+#define CLG_SPIRV_COMPILER "/usr/local/bin/clang"
+#endif
 #endif
 
 class SIR_Bernoulli_Network_Kernel
@@ -30,8 +36,13 @@ SIR_Bernoulli_Network_Kernel(size_t _N_workers): N_workers(_N_workers){}
 static void compile(size_t N_nodes, size_t N_edges, size_t Nt)
 {
     std::string kernel_file = std::string(CLG_KERNEL_DIR) + "Epidemiological/SIR_Bernoulli_Network";
+
+    std::string ll_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -cl-std=clc++2021 \"" + kernel_file + ".clcpp\"  -S -emit-llvm -o \"" + kernel_file + ".ll\"";
+    std::string ll_spirv_compile_command = "llvm-spirv --spirv-ext=-cl_khr_fp64 \"" + kernel_file + ".ll\" -o \"" + kernel_file + ".spv\"";
     std::string spirv_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -target spirv64 -cl-std=clc++2021 \"" + kernel_file + ".clcpp\" -o \"" + kernel_file + ".spv\"";
-    std::cout << spirv_compile_command << std::endl;
+    std::cout << ll_compile_command << std::endl;
+    std::cout << ll_spirv_compile_command << std::endl;
+    // std::cout << spirv_compile_command << std::endl;
     std::string preprocessor_definitions = " -D N_NETWORK_TIMESTEPS=" + std::to_string(Nt) + 
     " -D N_NETWORK_VERTICES=" + std::to_string(N_nodes) + 
     " -D N_NETWORK_EDGES=" + std::to_string(N_edges);
@@ -39,8 +50,10 @@ static void compile(size_t N_nodes, size_t N_edges, size_t Nt)
     std::string kernel_include_directories = " -I " + std::string(CLG_KERNEL_DIR) + "/Distributions/" + 
     " -I " + std::string(CLG_GENERATOR_DIR);
 
-
+    // std::system((ll_compile_command + preprocessor_definitions + kernel_include_directories).c_str());
+    // std::system(ll_spirv_compile_command.c_str());
     std::system((spirv_compile_command + preprocessor_definitions + kernel_include_directories).c_str());
+
 }
 
 static cl_int build_program(CLG_Instance& clInstance)

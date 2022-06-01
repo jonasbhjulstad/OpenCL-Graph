@@ -1,3 +1,0 @@
-C:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\SIR_Network_Example.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\SIR_Network_Example.dir/objects.a @CMakeFiles\SIR_Network_Example.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\SIR_Network_Example.dir/objects.a -Wl,--no-whole-archive -o SIR_Network_Example.exe -Wl,--out-implib,libSIR_Network_Example.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\SIR_Network_Example.dir\linklibs.rsp

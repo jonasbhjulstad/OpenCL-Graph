@@ -1,3 +1,0 @@
-C:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\PRNG_Example.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\PRNG_Example.dir/objects.a @CMakeFiles\PRNG_Example.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\PRNG_Example.dir/objects.a -Wl,--no-whole-archive -o PRNG_Example.exe -Wl,--out-implib,libPRNG_Example.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\PRNG_Example.dir\linklibs.rsp

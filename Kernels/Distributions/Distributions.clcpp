@@ -2,6 +2,7 @@
 #ifndef CLG_DISTRIBUTIONS_CLCPP
 #define CLG_DISTRIBUTIONS_CLCPP
 //Requires randomcl include path
+#pragma 
 
 #include <isaac.cl>
 #include <kiss99.cl>
@@ -316,20 +317,20 @@ struct PRNG_WELL512
 template <typename PRNG_generator>
 void UniformSample(PRNG_generator& rng, float min, float max, uint N, float* res)
 {
-    const float float_max = 3.402823466e+38f;
+    const float uint_max = 0xffffffff;
 
     for (int i = 0; i < N; i++)
     {
         
-        res[i] = rng.generate_float() *(max-min)/float_max + min;
+        res[i] = rng.generate_uint() *(max-min)/uint_max + min;
     }
 }
 
 template<typename PRNG_generator>
 float UniformSample(PRNG_generator& rng)
 {
-    const float float_max = 3.402823466e+38f;
-    float res = rng.generate_float()/float_max;
+    const float uint_max = 0xffffffff;
+    float res = rng.generate_uint()/uint_max;
     return res;
 }
 
@@ -337,7 +338,6 @@ template <typename PRNG_generator>
 bool BernoulliTrial(PRNG_generator& rng, const float p)
 {
     float r = UniformSample(rng);
-    printf("Sample: %u\n", (uint)100*r);
     return r < p;
 }
 

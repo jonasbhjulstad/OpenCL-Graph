@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: C:/Users/jonas/Documents/OpenCL-Graph/Kernels
-# Build directory: C:/Users/jonas/Documents/OpenCL-Graph/build/Kernels
+# Source directory: /home/deb/Documents/OpenCL-Graph/Kernels
+# Build directory: /home/deb/Documents/OpenCL-Graph/build/Kernels
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
