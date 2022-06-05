@@ -16,6 +16,10 @@
 /home/deb/Documents/OpenCL-Graph/build/Utils/CMakeFiles/test.dir
 /home/deb/Documents/OpenCL-Graph/build/Utils/CMakeFiles/edit_cache.dir
 /home/deb/Documents/OpenCL-Graph/build/Utils/CMakeFiles/rebuild_cache.dir
+/home/deb/Documents/OpenCL-Graph/build/Graph/CMakeFiles/CLG_graph_connect.dir
+/home/deb/Documents/OpenCL-Graph/build/Graph/CMakeFiles/test.dir
+/home/deb/Documents/OpenCL-Graph/build/Graph/CMakeFiles/edit_cache.dir
+/home/deb/Documents/OpenCL-Graph/build/Graph/CMakeFiles/rebuild_cache.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/CMakeFiles/test.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/CMakeFiles/edit_cache.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/CMakeFiles/rebuild_cache.dir
@@ -31,7 +35,7 @@
 /home/deb/Documents/OpenCL-Graph/build/Examples/PRNG/CMakeFiles/test.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/PRNG/CMakeFiles/edit_cache.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/PRNG/CMakeFiles/rebuild_cache.dir
-/home/deb/Documents/OpenCL-Graph/build/Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli_test.dir
+/home/deb/Documents/OpenCL-Graph/build/Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/SIR_Bernoulli/CMakeFiles/test.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/SIR_Bernoulli/CMakeFiles/edit_cache.dir
 /home/deb/Documents/OpenCL-Graph/build/Examples/SIR_Bernoulli/CMakeFiles/rebuild_cache.dir

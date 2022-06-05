@@ -43,11 +43,11 @@ def animate_nodes(G, node_colors, pos=None, *args, **kwargs):
 
     plt.axis('off')        
 
-    nx.draw_networkx_edges(G, pos, alpha=0.5)
+    edges = nx.draw_networkx_edges(G, pos, alpha=0.5)
+    nodes = nx.draw_networkx_nodes(G, pos, *args, **kwargs, node_color=['#%02x%02x%02x' % color[0] for color in node_colors])
     def update(ii):
-        # draw graph
-        nodes = nx.draw_networkx_nodes(G, pos, *args, **kwargs, node_color=['#%02x%02x%02x' % color[ii] for color in node_colors])
-        return nodes,
+        nodes.set_color(['#%02x%02x%02x' % color[ii] for color in node_colors])
+        return nodes, edges
 
     fig = plt.gcf()
     animation = FuncAnimation(fig, update, interval=50, frames=Nt, blit=True)

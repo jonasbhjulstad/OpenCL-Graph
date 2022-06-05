@@ -111,7 +111,7 @@ global uint* x_traj_g)
     countPopulation(x_traj, v_next, t);
     if (gID == 1)
     {
-      printf("t: %u, x_traj: %u, %u, %u\n", t, x_traj[3*t], x_traj[3*t + 1], x_traj[3*t + 2]);
+      // printf("t: %u, x_traj: %u, %u, %u\n", t, x_traj[3*t], x_traj[3*t + 1], x_traj[3*t + 2]);
     } 
 
   }

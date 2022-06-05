@@ -1,0 +1,2 @@
+add_library(CLG_graph_connect STATIC CLG_graph_connect.cpp)
+target_include_directories(CLG_graph_connect PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

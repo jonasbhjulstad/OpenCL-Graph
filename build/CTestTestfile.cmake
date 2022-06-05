@@ -6,5 +6,6 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("Kernels")
 subdirs("Utils")
+subdirs("Graph")
 subdirs("Examples")
 subdirs("test")
