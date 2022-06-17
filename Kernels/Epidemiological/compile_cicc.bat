@@ -1,0 +1,1 @@
+"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\nvvm\bin\cicc.exe" --nv_arch=SIR_Bernoulli_Network.bc

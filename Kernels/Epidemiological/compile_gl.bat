@@ -1,0 +1,1 @@
+clspv SIR_Bernoulli_Network.clcpp --cl-std=CLC++ -inline-entry-points -I"../Distributions" -I "C:\Users\jonas\Documents\OpenCL-Graph\build\_deps\randomcl_repo-src\generators" -DN_NETWORK_TIMESTEPS=100 -DN_NETWORK_VERTICES=100 -DN_NETWORK_EDGES=1000 --emit-ir=SIR_Bernoulli_Network.bc
