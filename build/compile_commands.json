@@ -11,17 +11,12 @@
 },
 {
   "directory": "/home/deb/Documents/OpenCL-Graph/build",
-  "command": "/usr/local/bin/clang++ -I/home/deb/Documents/OpenCL-Graph/Utils -I/home/deb/Documents/OpenCL-Graph/build/Utils -isystem /usr/local/include/igraph -g -fopenmp -std=gnu++17 -o Examples/Network/CMakeFiles/SIR_Network_Example.dir/SIR_Network_Example.cpp.o -c /home/deb/Documents/OpenCL-Graph/Examples/Network/SIR_Network_Example.cpp",
-  "file": "/home/deb/Documents/OpenCL-Graph/Examples/Network/SIR_Network_Example.cpp"
-},
-{
-  "directory": "/home/deb/Documents/OpenCL-Graph/build",
   "command": "/usr/local/bin/clang++ -I/home/deb/Documents/OpenCL-Graph/Utils -I/home/deb/Documents/OpenCL-Graph/build/Utils -g -fopenmp -std=gnu++17 -o Examples/PRNG/CMakeFiles/PRNG_Example.dir/PRNG_Example.cpp.o -c /home/deb/Documents/OpenCL-Graph/Examples/PRNG/PRNG_Example.cpp",
   "file": "/home/deb/Documents/OpenCL-Graph/Examples/PRNG/PRNG_Example.cpp"
 },
 {
   "directory": "/home/deb/Documents/OpenCL-Graph/build",
-  "command": "/usr/local/bin/clang++ -I/home/deb/Documents/OpenCL-Graph/Utils -I/home/deb/Documents/OpenCL-Graph/build/Utils -I/home/deb/Documents/OpenCL-Graph/Kernels/Epidemiological -I/home/deb/Documents/OpenCL-Graph/Graph -g -fopenmp -std=gnu++17 -o Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/SIR_Bernoulli.cpp.o -c /home/deb/Documents/OpenCL-Graph/Examples/SIR_Bernoulli/SIR_Bernoulli.cpp",
+  "command": "/usr/local/bin/clang++ -I/home/deb/Documents/CLCPP_PRNG/include -I/home/deb/Documents/OpenCL-Graph/Utils -I/home/deb/Documents/OpenCL-Graph/build/Utils -I/home/deb/Documents/OpenCL-Graph/Kernels/Epidemiological -I/home/deb/Documents/OpenCL-Graph/Graph -g -fopenmp -std=gnu++17 -o Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/SIR_Bernoulli.cpp.o -c /home/deb/Documents/OpenCL-Graph/Examples/SIR_Bernoulli/SIR_Bernoulli.cpp",
   "file": "/home/deb/Documents/OpenCL-Graph/Examples/SIR_Bernoulli/SIR_Bernoulli.cpp"
 },
 {

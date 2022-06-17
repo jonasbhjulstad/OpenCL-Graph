@@ -39,7 +39,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/local/bin/llvm-objdump")
+  set(CMAKE_OBJDUMP "/usr/bin/llvm-objdump-14")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
@@ -65,6 +65,13 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
   include("/home/deb/Documents/OpenCL-Graph/build/test/cmake_install.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/OpenCL_Graph-" TYPE FILE FILES
+    "/home/deb/Documents/OpenCL-Graph/build/pkg/opencl_graph-config.cmake"
+    "/home/deb/Documents/OpenCL-Graph/build/opencl_graph-config-version.cmake"
+    )
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

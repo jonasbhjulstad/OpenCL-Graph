@@ -115,7 +115,6 @@ global uint* x_traj_g)
     } 
 
   }
-
   assignVec_g<3*N_NETWORK_TIMESTEPS>(&x_traj_g[3*N_NETWORK_TIMESTEPS*gID], x_traj);
   assignVec_g<N_STATES_NETWORK_TRAJECTORY>(&v_traj_g[N_STATES_NETWORK_TRAJECTORY*gID], &v_traj[N_NETWORK_VERTICES]);
 

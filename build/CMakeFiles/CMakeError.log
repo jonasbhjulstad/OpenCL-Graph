@@ -1,11 +1,11 @@
 Determining if the function sgemm_ exists failed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_c32c2 && [1/2] Building C object CMakeFiles/cmTC_c32c2.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_c32c2
-FAILED: cmTC_c32c2 
-: && /usr/local/bin/clang -DCHECK_FUNCTION_EXISTS=sgemm_  CMakeFiles/cmTC_c32c2.dir/CheckFunctionExists.c.o -o cmTC_c32c2   && :
-/usr/bin/ld: CMakeFiles/cmTC_c32c2.dir/CheckFunctionExists.c.o: in function `main':
+Run Build Command(s):/usr/bin/ninja cmTC_e67fb && [1/2] Building C object CMakeFiles/cmTC_e67fb.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_e67fb
+FAILED: cmTC_e67fb 
+: && /usr/local/bin/clang-14 -DCHECK_FUNCTION_EXISTS=sgemm_  CMakeFiles/cmTC_e67fb.dir/CheckFunctionExists.c.o -o cmTC_e67fb   && :
+/usr/bin/ld: CMakeFiles/cmTC_e67fb.dir/CheckFunctionExists.c.o: in function `main':
 CheckFunctionExists.c:(.text+0x17): undefined reference to `sgemm_'
 clang-14: error: linker command failed with exit code 1 (use -v to see invocation)
 ninja: build stopped: subcommand failed.
@@ -15,11 +15,11 @@ ninja: build stopped: subcommand failed.
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_89562 && [1/2] Building C object CMakeFiles/cmTC_89562.dir/src.c.o
-[2/2] Linking C executable cmTC_89562
-FAILED: cmTC_89562 
-: && /usr/local/bin/clang   CMakeFiles/cmTC_89562.dir/src.c.o -o cmTC_89562   && :
-/usr/bin/ld: CMakeFiles/cmTC_89562.dir/src.c.o: in function `main':
+Run Build Command(s):/usr/bin/ninja cmTC_169c9 && [1/2] Building C object CMakeFiles/cmTC_169c9.dir/src.c.o
+[2/2] Linking C executable cmTC_169c9
+FAILED: cmTC_169c9 
+: && /usr/local/bin/clang-14   CMakeFiles/cmTC_169c9.dir/src.c.o -o cmTC_169c9   && :
+/usr/bin/ld: CMakeFiles/cmTC_169c9.dir/src.c.o: in function `main':
 src.c:(.text+0x25): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x2e): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x37): undefined reference to `pthread_cancel'
@@ -52,12 +52,168 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_344df && [1/2] Building C object CMakeFiles/cmTC_344df.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_344df
-FAILED: cmTC_344df 
-: && /usr/local/bin/clang -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_344df.dir/CheckFunctionExists.c.o -o cmTC_344df  -lpthreads && :
+Run Build Command(s):/usr/bin/ninja cmTC_a3378 && [1/2] Building C object CMakeFiles/cmTC_a3378.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_a3378
+FAILED: cmTC_a3378 
+: && /usr/local/bin/clang-14 -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_a3378.dir/CheckFunctionExists.c.o -o cmTC_a3378  -lpthreads && :
 /usr/bin/ld: cannot find -lpthreads
 clang-14: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_22613 && [1/2] Building CXX object CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o
+FAILED: CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o 
+/usr/local/bin/clang++   -fopenmp=libomp -v -MD -MT CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o -c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/local/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o.d -MT CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_22613.dir/OpenMPTryFlag.cpp.o -x c++ /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/lib/llvm-14/lib/clang/14.0.0/include"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_0e1ca && [1/2] Building CXX object CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o
+FAILED: CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o 
+/usr/local/bin/clang++   -fopenmp=libiomp5 -v -MD -MT CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o -c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/local/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o.d -MT CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_0e1ca.dir/OpenMPTryFlag.cpp.o -x c++ /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/lib/llvm-14/lib/clang/14.0.0/include"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_22f46 && [1/2] Building CXX object CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o
+FAILED: CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o 
+/usr/local/bin/clang++   -fopenmp -v -MD -MT CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o -c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/local/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o.d -MT CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_22f46.dir/OpenMPTryFlag.cpp.o -x c++ /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/lib/llvm-14/lib/clang/14.0.0/include"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CXX OpenMP failed with the following output:
+Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_016b8 && [1/2] Building CXX object CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o
+FAILED: CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o 
+/usr/local/bin/clang++   -Xclang -fopenmp -v -MD -MT CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o -MF CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o.d -o CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o -c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /usr/local/bin
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ (in-process)
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o.d -MT CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fopenmp -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_016b8.dir/OpenMPTryFlag.cpp.o -x c++ /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/lib/llvm-14/lib/clang/14.0.0/include"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
+ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
+ /usr/local/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp:2:10: fatal error: 'omp.h' file not found
+#include <omp.h>
+         ^~~~~~~
+1 error generated.
 ninja: build stopped: subcommand failed.
 
 

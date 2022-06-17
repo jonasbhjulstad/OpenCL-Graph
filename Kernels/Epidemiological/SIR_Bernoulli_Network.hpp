@@ -3,14 +3,14 @@
 #include <string>
 #include <CLG.hpp>
 #include <vector>
-
+#include <CLCPP_PRNG.hpp>
 #ifdef WIN32
 #ifndef CLG_SPIRV_COMPILER
 #define CLG_SPIRV_COMPILER "C:\\msys64\\clang64\\bin\\clang.exe"
 #endif
 #else
-#ifndef CLG_SPIRV_COMPILER
-#define CLG_SPIRV_COMPILER "/usr/local/bin/clang"
+#ifndef SPIRV_COMPILER
+#define SPIRV_COMPILER "/usr/local/bin/clang-14"
 #endif
 #endif
 
@@ -37,9 +37,9 @@ static void compile(size_t N_nodes, size_t N_edges, size_t Nt)
 {
     std::string kernel_file = std::string(CLG_KERNEL_DIR) + "Epidemiological/SIR_Bernoulli_Network";
 
-    std::string ll_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -cl-std=clc++2021 \"" + kernel_file + ".clcpp\"  -S -emit-llvm -o \"" + kernel_file + ".ll\"";
+    std::string ll_compile_command = std::string(SPIRV_COMPILER) + " -c -cl-std=clc++2021 \"" + kernel_file + ".clcpp\"  -S -emit-llvm -o \"" + kernel_file + ".ll\"";
     std::string ll_spirv_compile_command = "llvm-spirv --spirv-ext=-cl_khr_fp64 \"" + kernel_file + ".ll\" -o \"" + kernel_file + ".spv\"";
-    std::string spirv_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -target spirv64 -cl-std=clc++2021 \"" + kernel_file + ".clcpp\" -o \"" + kernel_file + ".spv\"";
+    std::string spirv_compile_command = std::string(SPIRV_COMPILER) + " -c -target spirv64 -cl-std=clc++2021 \"" + kernel_file + ".clcpp\" -o \"" + kernel_file + ".spv\"";
     std::cout << ll_compile_command << std::endl;
     std::cout << ll_spirv_compile_command << std::endl;
     // std::cout << spirv_compile_command << std::endl;
@@ -48,7 +48,7 @@ static void compile(size_t N_nodes, size_t N_edges, size_t Nt)
     " -D N_NETWORK_EDGES=" + std::to_string(N_edges);
 
     std::string kernel_include_directories = " -I " + std::string(CLG_KERNEL_DIR) + "/Distributions/" + 
-    " -I " + std::string(CLG_GENERATOR_DIR);
+    " -I " + std::string(CLCPP_PRNG_INCLUDE);
 
     // std::system((ll_compile_command + preprocessor_definitions + kernel_include_directories).c_str());
     // std::system(ll_spirv_compile_command.c_str());

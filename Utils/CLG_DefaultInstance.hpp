@@ -10,7 +10,7 @@
 #include <cassert>
 #include <stdlib.h>
 #include <CL/cl.h>
-#include <CLG_Util.hpp>
+#include <CLG_Utils.hpp>
 
 struct CLG_Instance
 {

@@ -1,6 +1,6 @@
 The system is: Linux - 5.17.5-surface - x86_64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-Compiler: /usr/local/bin/clang 
+Compiler: /usr/local/bin/clang-14 
 Build flags: 
 Id flags:  
 
@@ -28,7 +28,7 @@ The CXX compiler identification is Clang, found in "/home/deb/Documents/OpenCL-G
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_07f3e && [1/2] Building C object CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o
+Run Build Command(s):/usr/bin/ninja cmTC_669f9 && [1/2] Building C object CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o
 clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -40,7 +40,7 @@ Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
  (in-process)
- "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.23/Modules/CMakeCCompilerABI.c
+ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.23/Modules/CMakeCCompilerABI.c
 clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu
 ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
 ignoring nonexistent directory "/include"
@@ -51,7 +51,7 @@ ignoring nonexistent directory "/include"
  /usr/include/x86_64-linux-gnu
  /usr/include
 End of search list.
-[2/2] Linking C executable cmTC_07f3e
+[2/2] Linking C executable cmTC_669f9
 clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -62,7 +62,7 @@ Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
 Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_07f3e /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_669f9 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
 
 
 
@@ -82,10 +82,10 @@ Parsed C implicit include dir info from above output: rv=done
 
 
 Parsed C implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(ld\.lld-14|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_07f3e && [1/2] Building C object CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o]
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_669f9 && [1/2] Building C object CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o]
   ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -99,7 +99,7 @@ Parsed C implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
   ignore line: [ (in-process)]
-  ignore line: [ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.23/Modules/CMakeCCompilerABI.c]
+  ignore line: [ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCCompilerABI.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.23/Modules/CMakeCCompilerABI.c]
   ignore line: [clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu]
   ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
   ignore line: [ignoring nonexistent directory "/include"]
@@ -110,7 +110,7 @@ Parsed C implicit link information from above output:
   ignore line: [ /usr/include/x86_64-linux-gnu]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [[2/2] Linking C executable cmTC_07f3e]
+  ignore line: [[2/2] Linking C executable cmTC_669f9]
   ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -123,7 +123,7 @@ Parsed C implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_07f3e /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_669f9 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-zrelro] ==> ignore
     arg [--hash-style=gnu] ==> ignore
@@ -133,7 +133,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_07f3e] ==> ignore
+    arg [cmTC_669f9] ==> ignore
     arg [/lib/x86_64-linux-gnu/crt1.o] ==> obj [/lib/x86_64-linux-gnu/crt1.o]
     arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
@@ -146,7 +146,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/local/bin/../lib] ==> dir [/usr/local/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_07f3e.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_669f9.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -176,8 +176,8 @@ Parsed C implicit link information from above output:
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_8420b && [1/2] Building CXX object CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o
-clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
+Run Build Command(s):/usr/bin/ninja cmTC_811c5 && [1/2] Building CXX object CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o
+clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
 InstalledDir: /usr/local/bin
@@ -188,8 +188,9 @@ Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
  (in-process)
- "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
-clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu
+ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp
+clang -cc1 version 14.0.0 based upon LLVM 14.0.0git default target x86_64-unknown-linux-gnu
+ignoring nonexistent directory "/usr/lib/llvm-14/lib/clang/14.0.0/include"
 ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
 ignoring nonexistent directory "/include"
 #include "..." search starts here:
@@ -197,13 +198,12 @@ ignoring nonexistent directory "/include"
  /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
  /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
  /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
- /usr/local/lib/clang/14.0.5/include
  /usr/local/include
  /usr/include/x86_64-linux-gnu
  /usr/include
 End of search list.
-[2/2] Linking CXX executable cmTC_8420b
-clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
+[2/2] Linking CXX executable cmTC_811c5
+clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
 InstalledDir: /usr/local/bin
@@ -213,7 +213,7 @@ Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
 Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8420b /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_811c5 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
 
 
 
@@ -223,7 +223,6 @@ Parsed CXX implicit include dir info from above output: rv=done
     add: [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11]
     add: [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11]
     add: [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward]
-    add: [/usr/local/lib/clang/14.0.5/include]
     add: [/usr/local/include]
     add: [/usr/include/x86_64-linux-gnu]
     add: [/usr/include]
@@ -231,19 +230,18 @@ Parsed CXX implicit include dir info from above output: rv=done
   collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11] ==> [/usr/include/c++/11]
   collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11] ==> [/usr/include/x86_64-linux-gnu/c++/11]
   collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward] ==> [/usr/include/c++/11/backward]
-  collapse include dir [/usr/local/lib/clang/14.0.5/include] ==> [/usr/local/lib/clang/14.0.5/include]
   collapse include dir [/usr/local/include] ==> [/usr/local/include]
   collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
   collapse include dir [/usr/include] ==> [/usr/include]
-  implicit include dirs: [/usr/include/c++/11;/usr/include/x86_64-linux-gnu/c++/11;/usr/include/c++/11/backward;/usr/local/lib/clang/14.0.5/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+  implicit include dirs: [/usr/include/c++/11;/usr/include/x86_64-linux-gnu/c++/11;/usr/include/c++/11/backward;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
 
 
 Parsed CXX implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(ld\.lld-14|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_8420b && [1/2] Building CXX object CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_811c5 && [1/2] Building CXX object CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /usr/local/bin]
@@ -256,8 +254,9 @@ Parsed CXX implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
   ignore line: [ (in-process)]
-  ignore line: [ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu]
+  ignore line: [ "/usr/lib/llvm-14/bin/clang" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/lib/llvm-14/lib/clang/14.0.0 -dependency-file CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/lib/llvm-14/lib/clang/14.0.0/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.23/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [clang -cc1 version 14.0.0 based upon LLVM 14.0.0git default target x86_64-unknown-linux-gnu]
+  ignore line: [ignoring nonexistent directory "/usr/lib/llvm-14/lib/clang/14.0.0/include"]
   ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
   ignore line: [ignoring nonexistent directory "/include"]
   ignore line: [#include "..." search starts here:]
@@ -265,13 +264,12 @@ Parsed CXX implicit link information from above output:
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11]
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11]
   ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward]
-  ignore line: [ /usr/local/lib/clang/14.0.5/include]
   ignore line: [ /usr/local/include]
   ignore line: [ /usr/include/x86_64-linux-gnu]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [[2/2] Linking CXX executable cmTC_8420b]
-  ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
+  ignore line: [[2/2] Linking CXX executable cmTC_811c5]
+  ignore line: [clang version 14.0.0 (https://github.com/llvm/llvm-project.git 0045d01af96ff56c5b62d133be076020a33867ff)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
   ignore line: [InstalledDir: /usr/local/bin]
@@ -283,7 +281,7 @@ Parsed CXX implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8420b /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_811c5 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/llvm-14/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-zrelro] ==> ignore
     arg [--hash-style=gnu] ==> ignore
@@ -293,7 +291,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_8420b] ==> ignore
+    arg [cmTC_811c5] ==> ignore
     arg [/lib/x86_64-linux-gnu/crt1.o] ==> obj [/lib/x86_64-linux-gnu/crt1.o]
     arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o]
@@ -303,10 +301,10 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
-    arg [-L/usr/local/bin/../lib] ==> dir [/usr/local/bin/../lib]
+    arg [-L/usr/lib/llvm-14/bin/../lib] ==> dir [/usr/lib/llvm-14/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_8420b.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_811c5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -322,20 +320,20 @@ Parsed CXX implicit link information from above output:
   collapse library dir [/lib/../lib64] ==> [/lib64]
   collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
   collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
-  collapse library dir [/usr/local/bin/../lib] ==> [/usr/local/lib]
+  collapse library dir [/usr/lib/llvm-14/bin/../lib] ==> [/usr/lib/llvm-14/lib]
   collapse library dir [/lib] ==> [/lib]
   collapse library dir [/usr/lib] ==> [/usr/lib]
   implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
   implicit objs: [/lib/x86_64-linux-gnu/crt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o;/usr/lib/gcc/x86_64-linux-gnu/11/crtend.o;/lib/x86_64-linux-gnu/crtn.o]
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/local/lib;/lib;/usr/lib]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/lib/llvm-14/lib;/lib;/usr/lib]
   implicit fwks: []
 
 
 Determining if the CL_VERSION_2_2 exist passed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_17674 && [1/2] Building C object CMakeFiles/cmTC_17674.dir/CheckSymbolExists.c.o
-[2/2] Linking C executable cmTC_17674
+Run Build Command(s):/usr/bin/ninja cmTC_62010 && [1/2] Building C object CMakeFiles/cmTC_62010.dir/CheckSymbolExists.c.o
+[2/2] Linking C executable cmTC_62010
 
 
 File /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
@@ -355,39 +353,39 @@ int main(int argc, char** argv)
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_fedab && [1/2] Building C object CMakeFiles/cmTC_fedab.dir/CheckIncludeFile.c.o
-[2/2] Linking C executable cmTC_fedab
+Run Build Command(s):/usr/bin/ninja cmTC_ad9e0 && [1/2] Building C object CMakeFiles/cmTC_ad9e0.dir/CheckIncludeFile.c.o
+[2/2] Linking C executable cmTC_ad9e0
 
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_414f1 && [1/2] Building C object CMakeFiles/cmTC_414f1.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_414f1
+Run Build Command(s):/usr/bin/ninja cmTC_f6385 && [1/2] Building C object CMakeFiles/cmTC_f6385.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_f6385
 
 
 
 Determining if the function sgemm_ exists passed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_23a24 && [1/2] Building C object CMakeFiles/cmTC_23a24.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_23a24
+Run Build Command(s):/usr/bin/ninja cmTC_a60e4 && [1/2] Building C object CMakeFiles/cmTC_a60e4.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_a60e4
 
 
 
 Determining if the function cheev_ exists passed with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_e4ff9 && [1/2] Building C object CMakeFiles/cmTC_e4ff9.dir/CheckFunctionExists.c.o
-[2/2] Linking C executable cmTC_e4ff9
+Run Build Command(s):/usr/bin/ninja cmTC_3ed1d && [1/2] Building C object CMakeFiles/cmTC_3ed1d.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_3ed1d
 
 
 
 Detecting C OpenMP compiler ABI info compiled with the following output:
 Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/ninja cmTC_401b4 && [1/2] Building C object CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o
+Run Build Command(s):/usr/bin/ninja cmTC_335ca && [1/2] Building C object CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o
 clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -399,7 +397,7 @@ Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
  (in-process)
- "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o.d -MT CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o -x c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.c
+ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o.d -MT CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o -x c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.c
 clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu
 ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
 ignoring nonexistent directory "/include"
@@ -410,7 +408,7 @@ ignoring nonexistent directory "/include"
  /usr/include/x86_64-linux-gnu
  /usr/include
 End of search list.
-[2/2] Linking C executable cmTC_401b4
+[2/2] Linking C executable cmTC_335ca
 clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
 Target: x86_64-unknown-linux-gnu
 Thread model: posix
@@ -421,15 +419,15 @@ Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
 Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
 Candidate multilib: .;@m64
 Selected multilib: .;@m64
- "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_401b4 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o -lomp -rpath /usr/local/lib -L/usr/local/lib -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
+ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_335ca /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o -lomp -rpath /usr/local/lib -L/usr/local/lib -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
 
 
 
 Parsed C OpenMP implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  link line regex: [^( *|.*[/\])(ld\.lld-14|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_401b4 && [1/2] Building C object CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o]
+  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_335ca && [1/2] Building C object CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o]
   ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -443,7 +441,7 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
   ignore line: [ (in-process)]
-  ignore line: [ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o.d -MT CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o -x c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.c]
+  ignore line: [ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.c -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o.d -MT CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o -sys-header-deps -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o -x c /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.c]
   ignore line: [clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu]
   ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
   ignore line: [ignoring nonexistent directory "/include"]
@@ -454,7 +452,7 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [ /usr/include/x86_64-linux-gnu]
   ignore line: [ /usr/include]
   ignore line: [End of search list.]
-  ignore line: [[2/2] Linking C executable cmTC_401b4]
+  ignore line: [[2/2] Linking C executable cmTC_335ca]
   ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
   ignore line: [Target: x86_64-unknown-linux-gnu]
   ignore line: [Thread model: posix]
@@ -467,7 +465,7 @@ Parsed C OpenMP implicit link information from above output:
   ignore line: [@m64]
   ignore line: [Selected multilib: .]
   ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_401b4 /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o -lomp -rpath /usr/local/lib -L/usr/local/lib -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
+  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_335ca /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o -lomp -rpath /usr/local/lib -L/usr/local/lib -lgcc --as-needed -lgcc_s --no-as-needed -lpthread -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
     arg [/usr/bin/ld] ==> ignore
     arg [-zrelro] ==> ignore
     arg [--hash-style=gnu] ==> ignore
@@ -477,7 +475,7 @@ Parsed C OpenMP implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_401b4] ==> ignore
+    arg [cmTC_335ca] ==> ignore
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64]
     arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
@@ -487,7 +485,7 @@ Parsed C OpenMP implicit link information from above output:
     arg [-L/usr/local/bin/../lib] ==> dir [/usr/local/bin/../lib]
     arg [-L/lib] ==> dir [/lib]
     arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_401b4.dir/OpenMPTryFlag.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_335ca.dir/OpenMPTryFlag.c.o] ==> ignore
     arg [-lomp] ==> lib [omp]
     arg [-rpath] ==> ignore
     arg [/usr/local/lib] ==> ignore
@@ -513,144 +511,6 @@ Parsed C OpenMP implicit link information from above output:
   collapse library dir [/usr/lib] ==> [/usr/lib]
   collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
   implicit libs: [omp;gcc;gcc_s;pthread;c;gcc;gcc_s]
-  implicit objs: []
-  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/local/lib;/lib;/usr/lib]
-  implicit fwks: []
-
-
-Detecting CXX OpenMP compiler ABI info compiled with the following output:
-Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/ninja cmTC_7e5ff && [1/2] Building CXX object CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o
-clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-InstalledDir: /usr/local/bin
-Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
-Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
-Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
-Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
-Candidate multilib: .;@m64
-Selected multilib: .;@m64
- (in-process)
- "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o.d -MT CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o -x c++ /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp
-clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu
-ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"
-ignoring nonexistent directory "/include"
-#include "..." search starts here:
-#include <...> search starts here:
- /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11
- /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11
- /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward
- /usr/local/lib/clang/14.0.5/include
- /usr/local/include
- /usr/include/x86_64-linux-gnu
- /usr/include
-End of search list.
-[2/2] Linking CXX executable cmTC_7e5ff
-clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)
-Target: x86_64-unknown-linux-gnu
-Thread model: posix
-InstalledDir: /usr/local/bin
-Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
-Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8
-Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
-Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11
-Candidate multilib: .;@m64
-Selected multilib: .;@m64
- "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7e5ff /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lomp -rpath /usr/local/lib -L/usr/local/lib -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o
-
-
-
-Parsed CXX OpenMP implicit link information from above output:
-  link line regex: [^( *|.*[/\])(ld\.lld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp]
-  ignore line: []
-  ignore line: [Run Build Command(s):/usr/bin/ninja cmTC_7e5ff && [1/2] Building CXX object CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o]
-  ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
-  ignore line: [Target: x86_64-unknown-linux-gnu]
-  ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /usr/local/bin]
-  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
-  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
-  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9]
-  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
-  ignore line: [Candidate multilib: .]
-  ignore line: [@m64]
-  ignore line: [Selected multilib: .]
-  ignore line: [@m64]
-  ignore line: [ (in-process)]
-  ignore line: [ "/usr/local/bin/clang-14" -cc1 -triple x86_64-unknown-linux-gnu -emit-obj -mrelax-all --mrelax-relocations -disable-free -clear-ast-before-backend -main-file-name OpenMPTryFlag.cpp -mrelocation-model static -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -mllvm -treat-scalable-fixed-error-as-warning -debugger-tuning=gdb -v -fcoverage-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -resource-dir /usr/local/lib/clang/14.0.5 -dependency-file CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o.d -MT CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward -internal-isystem /usr/local/lib/clang/14.0.5/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -fdebug-compilation-dir=/home/deb/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp -ferror-limit 19 -fopenmp -fopenmp-target-new-runtime -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o -x c++ /home/deb/Documents/OpenCL-Graph/build/CMakeFiles/FindOpenMP/OpenMPTryFlag.cpp]
-  ignore line: [clang -cc1 version 14.0.5 based upon LLVM 14.0.5 default target x86_64-unknown-linux-gnu]
-  ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/11/../../../../x86_64-linux-gnu/include"]
-  ignore line: [ignoring nonexistent directory "/include"]
-  ignore line: [#include "..." search starts here:]
-  ignore line: [#include <...> search starts here:]
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11]
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11]
-  ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/backward]
-  ignore line: [ /usr/local/lib/clang/14.0.5/include]
-  ignore line: [ /usr/local/include]
-  ignore line: [ /usr/include/x86_64-linux-gnu]
-  ignore line: [ /usr/include]
-  ignore line: [End of search list.]
-  ignore line: [[2/2] Linking CXX executable cmTC_7e5ff]
-  ignore line: [clang version 14.0.5 (https://github.com/llvm/llvm-project.git b950bd2ce7ff79b203b2acba02e1c468836989ae)]
-  ignore line: [Target: x86_64-unknown-linux-gnu]
-  ignore line: [Thread model: posix]
-  ignore line: [InstalledDir: /usr/local/bin]
-  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
-  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/8]
-  ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9]
-  ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/11]
-  ignore line: [Candidate multilib: .]
-  ignore line: [@m64]
-  ignore line: [Selected multilib: .]
-  ignore line: [@m64]
-  link line: [ "/usr/bin/ld" -z relro --hash-style=gnu --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_7e5ff /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbegin.o -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/local/bin/../lib -L/lib -L/usr/lib CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o -lstdc++ -lm -lomp -rpath /usr/local/lib -L/usr/local/lib -lgcc_s -lgcc -lpthread -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/11/crtend.o /lib/x86_64-linux-gnu/crtn.o]
-    arg [/usr/bin/ld] ==> ignore
-    arg [-zrelro] ==> ignore
-    arg [--hash-style=gnu] ==> ignore
-    arg [--eh-frame-hdr] ==> ignore
-    arg [-m] ==> ignore
-    arg [elf_x86_64] ==> ignore
-    arg [-dynamic-linker] ==> ignore
-    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-    arg [-o] ==> ignore
-    arg [cmTC_7e5ff] ==> ignore
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11]
-    arg [-L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64]
-    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
-    arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
-    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
-    arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
-    arg [-L/usr/local/bin/../lib] ==> dir [/usr/local/bin/../lib]
-    arg [-L/lib] ==> dir [/lib]
-    arg [-L/usr/lib] ==> dir [/usr/lib]
-    arg [CMakeFiles/cmTC_7e5ff.dir/OpenMPTryFlag.cpp.o] ==> ignore
-    arg [-lstdc++] ==> lib [stdc++]
-    arg [-lm] ==> lib [m]
-    arg [-lomp] ==> lib [omp]
-    arg [-rpath] ==> ignore
-    arg [/usr/local/lib] ==> ignore
-    arg [-L/usr/local/lib] ==> dir [/usr/local/lib]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-    arg [-lpthread] ==> lib [pthread]
-    arg [-lc] ==> lib [c]
-    arg [-lgcc_s] ==> lib [gcc_s]
-    arg [-lgcc] ==> lib [gcc]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11] ==> [/usr/lib/gcc/x86_64-linux-gnu/11]
-  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib64] ==> [/usr/lib64]
-  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
-  collapse library dir [/lib/../lib64] ==> [/lib64]
-  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
-  collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
-  collapse library dir [/usr/local/bin/../lib] ==> [/usr/local/lib]
-  collapse library dir [/lib] ==> [/lib]
-  collapse library dir [/usr/lib] ==> [/usr/lib]
-  collapse library dir [/usr/local/lib] ==> [/usr/local/lib]
-  implicit libs: [stdc++;m;omp;gcc_s;gcc;pthread;c;gcc_s;gcc]
   implicit objs: []
   implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/11;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/usr/local/lib;/lib;/usr/lib]
   implicit fwks: []
