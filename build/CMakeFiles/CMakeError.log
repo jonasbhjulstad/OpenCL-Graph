@@ -1,55 +1,95 @@
 Determining if the function sgemm_ exists failed with the following output:
 Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_b0bbb/fast && /usr/bin/make  -f CMakeFiles/cmTC_b0bbb.dir/build.make CMakeFiles/cmTC_b0bbb.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e4df9/fast && /usr/bin/make  -f CMakeFiles/cmTC_e4df9.dir/build.make CMakeFiles/cmTC_e4df9.dir/build
 make[1]: Entering directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_b0bbb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0bbb.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o -o cmTC_b0bbb 
-/usr/bin/ld: CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o: in function `main':
+Building C object CMakeFiles/cmTC_e4df9.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles/cmTC_e4df9.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e4df9
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4df9.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_e4df9.dir/CheckFunctionExists.c.o -o cmTC_e4df9 
+/usr/bin/ld: CMakeFiles/cmTC_e4df9.dir/CheckFunctionExists.c.o: in function `main':
 CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_b0bbb.dir/build.make:99: cmTC_b0bbb] Error 1
+make[1]: *** [CMakeFiles/cmTC_e4df9.dir/build.make:99: cmTC_e4df9] Error 1
 make[1]: Leaving directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:127: cmTC_b0bbb/fast] Error 2
+make: *** [Makefile:127: cmTC_e4df9/fast] Error 2
 
 
 
 Determining if the function cheev_ exists failed with the following output:
 Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_c801c/fast && /usr/bin/make  -f CMakeFiles/cmTC_c801c.dir/build.make CMakeFiles/cmTC_c801c.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_85391/fast && /usr/bin/make  -f CMakeFiles/cmTC_85391.dir/build.make CMakeFiles/cmTC_85391.dir/build
 make[1]: Entering directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_c801c
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c801c.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o -o cmTC_c801c  /usr/lib/libblas.so -lm -ldl 
-/usr/bin/ld: CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o: in function `main':
+Building C object CMakeFiles/cmTC_85391.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_85391.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_85391
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85391.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_85391.dir/CheckFunctionExists.c.o -o cmTC_85391  /usr/lib/libblas.so -lm -ldl 
+/usr/bin/ld: CMakeFiles/cmTC_85391.dir/CheckFunctionExists.c.o: in function `main':
 CheckFunctionExists.c:(.text+0x10): undefined reference to `cheev_'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_c801c.dir/build.make:100: cmTC_c801c] Error 1
+make[1]: *** [CMakeFiles/cmTC_85391.dir/build.make:100: cmTC_85391] Error 1
 make[1]: Leaving directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:127: cmTC_c801c/fast] Error 2
+make: *** [Makefile:127: cmTC_85391/fast] Error 2
 
 
 
 Determining if the function cheev_ exists failed with the following output:
 Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make -f Makefile cmTC_d0378/fast && /usr/bin/make  -f CMakeFiles/cmTC_d0378.dir/build.make CMakeFiles/cmTC_d0378.dir/build
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_8d969/fast && /usr/bin/make  -f CMakeFiles/cmTC_8d969.dir/build.make CMakeFiles/cmTC_8d969.dir/build
 make[1]: Entering directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d0378.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_d0378.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
-Linking C executable cmTC_d0378
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0378.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_d0378.dir/CheckFunctionExists.c.o -o cmTC_d0378  /usr/lib/liblapack.so /usr/lib/libblas.so -fortranlibs 
+Building C object CMakeFiles/cmTC_8d969.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_8d969.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8d969
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d969.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_8d969.dir/CheckFunctionExists.c.o -o cmTC_8d969  /usr/lib/liblapack.so /usr/lib/libblas.so -fortranlibs 
 cc: error: unrecognized command-line option ‘-fortranlibs’
-make[1]: *** [CMakeFiles/cmTC_d0378.dir/build.make:101: cmTC_d0378] Error 1
+make[1]: *** [CMakeFiles/cmTC_8d969.dir/build.make:101: cmTC_8d969] Error 1
 make[1]: Leaving directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:127: cmTC_d0378/fast] Error 2
+make: *** [Makefile:127: cmTC_8d969/fast] Error 2
+
+
+
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_238ba && [1/2] Building C object CMakeFiles/cmTC_238ba.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_238ba
+FAILED: cmTC_238ba 
+: && /usr/local/bin/clang -DCHECK_FUNCTION_EXISTS=sgemm_  CMakeFiles/cmTC_238ba.dir/CheckFunctionExists.c.o -o cmTC_238ba   && :
+/usr/bin/ld: CMakeFiles/cmTC_238ba.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `sgemm_'
+clang-14: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_adde7 && [1/2] Building C object CMakeFiles/cmTC_adde7.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_adde7
+FAILED: cmTC_adde7 
+: && /usr/local/bin/clang -DCHECK_FUNCTION_EXISTS=cheev_  CMakeFiles/cmTC_adde7.dir/CheckFunctionExists.c.o -o cmTC_adde7  /usr/lib/libblas.so  -lm  -ldl && :
+/usr/bin/ld: CMakeFiles/cmTC_adde7.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x17): undefined reference to `cheev_'
+clang-14: error: linker command failed with exit code 1 (use -v to see invocation)
+ninja: build stopped: subcommand failed.
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_e3aa1 && [1/2] Building C object CMakeFiles/cmTC_e3aa1.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_e3aa1
+FAILED: cmTC_e3aa1 
+: && /usr/local/bin/clang -DCHECK_FUNCTION_EXISTS=cheev_  CMakeFiles/cmTC_e3aa1.dir/CheckFunctionExists.c.o -o cmTC_e3aa1  /usr/lib/liblapack.so  /usr/lib/libblas.so  -fortranlibs && :
+clang-14: error: unknown argument: '-fortranlibs'
+ninja: build stopped: subcommand failed.
 
 
 

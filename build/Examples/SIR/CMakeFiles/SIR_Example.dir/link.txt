@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/SIR_Example.dir/SIR_Example.cpp.o -o SIR_Example  /usr/lib/libOpenCL.so 
+/usr/bin/c++ CMakeFiles/SIR_Example.dir/SIR_Example.cpp.o -o SIR_Example  -Wl,-rpath,/usr/local/lib /usr/local/lib/libOpenCL.so 

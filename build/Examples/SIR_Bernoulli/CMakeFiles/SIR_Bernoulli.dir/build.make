@@ -92,7 +92,7 @@ SIR_Bernoulli_EXTERNAL_OBJECTS =
 
 Examples/SIR_Bernoulli/SIR_Bernoulli: Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/SIR_Bernoulli.cpp.o
 Examples/SIR_Bernoulli/SIR_Bernoulli: Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/build.make
-Examples/SIR_Bernoulli/SIR_Bernoulli: /usr/lib/libOpenCL.so
+Examples/SIR_Bernoulli/SIR_Bernoulli: /usr/local/lib/libOpenCL.so
 Examples/SIR_Bernoulli/SIR_Bernoulli: Graph/libCLG_graph_connect.a
 Examples/SIR_Bernoulli/SIR_Bernoulli: /usr/lib/liblapack.so
 Examples/SIR_Bernoulli/SIR_Bernoulli: /usr/lib/libblas.so

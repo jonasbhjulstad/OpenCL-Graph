@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/SIR_Bernoulli.dir/SIR_Bernoulli.cpp.o -o SIR_Bernoulli  /usr/lib/libOpenCL.so -ligraph ../../Graph/libCLG_graph_connect.a /usr/lib/liblapack.so /usr/lib/libblas.so 
+/usr/bin/c++ CMakeFiles/SIR_Bernoulli.dir/SIR_Bernoulli.cpp.o -o SIR_Bernoulli  -Wl,-rpath,/usr/local/lib /usr/local/lib/libOpenCL.so -ligraph ../../Graph/libCLG_graph_connect.a /usr/lib/liblapack.so /usr/lib/libblas.so 

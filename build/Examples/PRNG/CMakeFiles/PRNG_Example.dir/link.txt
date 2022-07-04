@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/PRNG_Example.dir/PRNG_Example.cpp.o -o PRNG_Example  /usr/lib/libOpenCL.so 
+/usr/bin/c++ CMakeFiles/PRNG_Example.dir/PRNG_Example.cpp.o -o PRNG_Example  -Wl,-rpath,/usr/local/lib /usr/local/lib/libOpenCL.so 

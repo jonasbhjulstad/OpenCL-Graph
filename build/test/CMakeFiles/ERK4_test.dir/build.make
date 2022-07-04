@@ -92,7 +92,7 @@ ERK4_test_EXTERNAL_OBJECTS =
 
 test/ERK4_test: test/CMakeFiles/ERK4_test.dir/ERK4_test.cpp.o
 test/ERK4_test: test/CMakeFiles/ERK4_test.dir/build.make
-test/ERK4_test: /usr/lib/libOpenCL.so
+test/ERK4_test: /usr/local/lib/libOpenCL.so
 test/ERK4_test: test/CMakeFiles/ERK4_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ERK4_test"
 	cd /home/arch/Documents/OpenCL-Graph/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ERK4_test.dir/link.txt --verbose=$(VERBOSE)

@@ -92,7 +92,7 @@ SIR_Example_EXTERNAL_OBJECTS =
 
 Examples/SIR/SIR_Example: Examples/SIR/CMakeFiles/SIR_Example.dir/SIR_Example.cpp.o
 Examples/SIR/SIR_Example: Examples/SIR/CMakeFiles/SIR_Example.dir/build.make
-Examples/SIR/SIR_Example: /usr/lib/libOpenCL.so
+Examples/SIR/SIR_Example: /usr/local/lib/libOpenCL.so
 Examples/SIR/SIR_Example: Examples/SIR/CMakeFiles/SIR_Example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable SIR_Example"
 	cd /home/arch/Documents/OpenCL-Graph/build/Examples/SIR && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SIR_Example.dir/link.txt --verbose=$(VERBOSE)

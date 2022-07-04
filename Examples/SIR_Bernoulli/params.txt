@@ -4,6 +4,6 @@ Nt 100
 p_ER 0.8
 p_I_0 0.1
 bernoulli_p_I 1e-3
-bernoulli_p_R 1e-4
+bernoulli_p_R 1e-3
 N_clusters 2
 p_ER_cluster 0.2

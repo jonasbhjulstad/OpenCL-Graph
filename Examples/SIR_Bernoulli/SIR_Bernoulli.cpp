@@ -278,7 +278,7 @@ void write_trajectories(std::vector<cl_uint>& x_traj, std::vector<cl_uint>& v_tr
     std::ofstream f;
     for (cl_uint i = 0; i < N_workers; i++)
     {
-        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/v_traj_" + std::to_string(N_workers + i) + ".csv");
+        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/v_traj_" + std::to_string(i) + ".csv");
         for (cl_uint j = 0; j < Nt; j++)
         {
             f << v_traj[i*N_nodes*Nt + j*N_nodes];

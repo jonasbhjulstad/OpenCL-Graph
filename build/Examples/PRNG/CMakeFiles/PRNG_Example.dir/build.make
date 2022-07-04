@@ -92,7 +92,7 @@ PRNG_Example_EXTERNAL_OBJECTS =
 
 Examples/PRNG/PRNG_Example: Examples/PRNG/CMakeFiles/PRNG_Example.dir/PRNG_Example.cpp.o
 Examples/PRNG/PRNG_Example: Examples/PRNG/CMakeFiles/PRNG_Example.dir/build.make
-Examples/PRNG/PRNG_Example: /usr/lib/libOpenCL.so
+Examples/PRNG/PRNG_Example: /usr/local/lib/libOpenCL.so
 Examples/PRNG/PRNG_Example: Examples/PRNG/CMakeFiles/PRNG_Example.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable PRNG_Example"
 	cd /home/arch/Documents/OpenCL-Graph/build/Examples/PRNG && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PRNG_Example.dir/link.txt --verbose=$(VERBOSE)
