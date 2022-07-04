@@ -1,20 +1,55 @@
 Determining if the function sgemm_ exists failed with the following output:
-Change Dir: C:/Users/jonas/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/msys64/mingw64/bin/mingw32-make.exe -f Makefile cmTC_8abbc/fast && C:/msys64/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_8abbc.dir\build.make CMakeFiles/cmTC_8abbc.dir/build
-mingw32-make[1]: Entering directory 'C:/Users/jonas/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_8abbc.dir/CheckFunctionExists.c.obj
-C:\msys64\mingw64\bin\cc.exe   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles\cmTC_8abbc.dir\CheckFunctionExists.c.obj -c C:\msys64\mingw64\share\cmake\Modules\CheckFunctionExists.c
-Linking C executable cmTC_8abbc.exe
-C:\msys64\mingw64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_8abbc.dir\link.txt --verbose=1
-C:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\cmTC_8abbc.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\cmTC_8abbc.dir/objects.a @CMakeFiles\cmTC_8abbc.dir\objects1.rsp
-C:\msys64\mingw64\bin\cc.exe  -DCHECK_FUNCTION_EXISTS=sgemm_ -Wl,--whole-archive CMakeFiles\cmTC_8abbc.dir/objects.a -Wl,--no-whole-archive -o cmTC_8abbc.exe -Wl,--out-implib,libcmTC_8abbc.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_8abbc.dir\linklibs.rsp
-C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\cmTC_8abbc.dir/objects.a(CheckFunctionExists.c.obj):CheckFunctionExists.c:(.text+0x15): undefined reference to `sgemm_'
-collect2.exe: error: ld returned 1 exit status
-mingw32-make[1]: *** [CMakeFiles\cmTC_8abbc.dir\build.make:100: cmTC_8abbc.exe] Error 1
-mingw32-make[1]: Leaving directory 'C:/Users/jonas/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
-mingw32-make: *** [Makefile:126: cmTC_8abbc/fast] Error 2
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b0bbb/fast && /usr/bin/make  -f CMakeFiles/cmTC_b0bbb.dir/build.make CMakeFiles/cmTC_b0bbb.dir/build
+make[1]: Entering directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b0bbb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0bbb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o -o cmTC_b0bbb 
+/usr/bin/ld: CMakeFiles/cmTC_b0bbb.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_b0bbb.dir/build.make:99: cmTC_b0bbb] Error 1
+make[1]: Leaving directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_b0bbb/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_c801c/fast && /usr/bin/make  -f CMakeFiles/cmTC_c801c.dir/build.make CMakeFiles/cmTC_c801c.dir/build
+make[1]: Entering directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c801c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c801c.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o -o cmTC_c801c  /usr/lib/libblas.so -lm -ldl 
+/usr/bin/ld: CMakeFiles/cmTC_c801c.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_c801c.dir/build.make:100: cmTC_c801c] Error 1
+make[1]: Leaving directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_c801c/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d0378/fast && /usr/bin/make  -f CMakeFiles/cmTC_d0378.dir/build.make CMakeFiles/cmTC_d0378.dir/build
+make[1]: Entering directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0378.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_d0378.dir/CheckFunctionExists.c.o -c /usr/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d0378
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0378.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_d0378.dir/CheckFunctionExists.c.o -o cmTC_d0378  /usr/lib/liblapack.so /usr/lib/libblas.so -fortranlibs 
+cc: error: unrecognized command-line option ‘-fortranlibs’
+make[1]: *** [CMakeFiles/cmTC_d0378.dir/build.make:101: cmTC_d0378] Error 1
+make[1]: Leaving directory '/home/arch/Documents/OpenCL-Graph/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_d0378/fast] Error 2
 
 
 

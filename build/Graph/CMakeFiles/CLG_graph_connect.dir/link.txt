@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCLG_graph_connect.a CMakeFiles/CLG_graph_connect.dir/CLG_graph_connect.cpp.o
+/usr/bin/ranlib libCLG_graph_connect.a
