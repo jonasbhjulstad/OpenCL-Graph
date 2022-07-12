@@ -173,6 +173,7 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... Utils"
 .PHONY : help
 
 

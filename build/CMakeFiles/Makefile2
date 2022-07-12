@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/arch/Documents/OpenCL-Graph/build
 # The main recursive "all" target.
 all: Kernels/all
 all: Utils/all
+all: Toolchains/all
 all: Graph/all
 all: Examples/all
 all: test/all
@@ -73,14 +74,20 @@ all: test/all
 # The main recursive "preinstall" target.
 preinstall: Kernels/preinstall
 preinstall: Utils/preinstall
+preinstall: Toolchains/preinstall
 preinstall: Graph/preinstall
 preinstall: Examples/preinstall
 preinstall: test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/intrinsics_gen.dir/clean
+clean: CMakeFiles/omp_gen.dir/clean
+clean: CMakeFiles/acc_gen.dir/clean
+clean: CMakeFiles/clang-tablegen-targets.dir/clean
 clean: Kernels/clean
 clean: Utils/clean
+clean: Toolchains/clean
 clean: Graph/clean
 clean: Examples/clean
 clean: test/clean
@@ -156,7 +163,7 @@ Examples/SIR_Bernoulli/clean: Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.di
 # Directory level rules for directory Graph
 
 # Recursive "all" directory target.
-Graph/all: Graph/CMakeFiles/CLG_graph_connect.dir/all
+Graph/all: Graph/CMakeFiles/graph_connect.dir/all
 .PHONY : Graph/all
 
 # Recursive "preinstall" directory target.
@@ -164,7 +171,7 @@ Graph/preinstall:
 .PHONY : Graph/preinstall
 
 # Recursive "clean" directory target.
-Graph/clean: Graph/CMakeFiles/CLG_graph_connect.dir/clean
+Graph/clean: Graph/CMakeFiles/graph_connect.dir/clean
 .PHONY : Graph/clean
 
 #=============================================================================
@@ -234,10 +241,25 @@ Kernels/Integrators/clean:
 .PHONY : Kernels/Integrators/clean
 
 #=============================================================================
+# Directory level rules for directory Toolchains
+
+# Recursive "all" directory target.
+Toolchains/all: Toolchains/CMakeFiles/SPIRV_Compiler.dir/all
+.PHONY : Toolchains/all
+
+# Recursive "preinstall" directory target.
+Toolchains/preinstall:
+.PHONY : Toolchains/preinstall
+
+# Recursive "clean" directory target.
+Toolchains/clean: Toolchains/CMakeFiles/SPIRV_Compiler.dir/clean
+.PHONY : Toolchains/clean
+
+#=============================================================================
 # Directory level rules for directory Utils
 
 # Recursive "all" directory target.
-Utils/all:
+Utils/all: Utils/CMakeFiles/Utils.dir/all
 .PHONY : Utils/all
 
 # Recursive "preinstall" directory target.
@@ -245,7 +267,7 @@ Utils/preinstall:
 .PHONY : Utils/preinstall
 
 # Recursive "clean" directory target.
-Utils/clean:
+Utils/clean: Utils/CMakeFiles/Utils.dir/clean
 .PHONY : Utils/clean
 
 #=============================================================================
@@ -264,44 +286,201 @@ test/clean: test/CMakeFiles/ERK4_test.dir/clean
 .PHONY : test/clean
 
 #=============================================================================
-# Target rules for target Graph/CMakeFiles/CLG_graph_connect.dir
+# Target rules for target CMakeFiles/intrinsics_gen.dir
 
 # All Build rule for target.
-Graph/CMakeFiles/CLG_graph_connect.dir/all:
-	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/depend
-	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=1,2 "Built target CLG_graph_connect"
-.PHONY : Graph/CMakeFiles/CLG_graph_connect.dir/all
+CMakeFiles/intrinsics_gen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num= "Built target intrinsics_gen"
+.PHONY : CMakeFiles/intrinsics_gen.dir/all
 
 # Build rule for subdir invocation for target.
-Graph/CMakeFiles/CLG_graph_connect.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Graph/CMakeFiles/CLG_graph_connect.dir/all
+CMakeFiles/intrinsics_gen.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
-.PHONY : Graph/CMakeFiles/CLG_graph_connect.dir/rule
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/intrinsics_gen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : CMakeFiles/intrinsics_gen.dir/rule
 
 # Convenience name for target.
-CLG_graph_connect: Graph/CMakeFiles/CLG_graph_connect.dir/rule
-.PHONY : CLG_graph_connect
+intrinsics_gen: CMakeFiles/intrinsics_gen.dir/rule
+.PHONY : intrinsics_gen
 
 # clean rule for target.
-Graph/CMakeFiles/CLG_graph_connect.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/clean
-.PHONY : Graph/CMakeFiles/CLG_graph_connect.dir/clean
+CMakeFiles/intrinsics_gen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/clean
+.PHONY : CMakeFiles/intrinsics_gen.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/omp_gen.dir
+
+# All Build rule for target.
+CMakeFiles/omp_gen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num= "Built target omp_gen"
+.PHONY : CMakeFiles/omp_gen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/omp_gen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/omp_gen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : CMakeFiles/omp_gen.dir/rule
+
+# Convenience name for target.
+omp_gen: CMakeFiles/omp_gen.dir/rule
+.PHONY : omp_gen
+
+# clean rule for target.
+CMakeFiles/omp_gen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/clean
+.PHONY : CMakeFiles/omp_gen.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/acc_gen.dir
+
+# All Build rule for target.
+CMakeFiles/acc_gen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num= "Built target acc_gen"
+.PHONY : CMakeFiles/acc_gen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/acc_gen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/acc_gen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : CMakeFiles/acc_gen.dir/rule
+
+# Convenience name for target.
+acc_gen: CMakeFiles/acc_gen.dir/rule
+.PHONY : acc_gen
+
+# clean rule for target.
+CMakeFiles/acc_gen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/clean
+.PHONY : CMakeFiles/acc_gen.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/clang-tablegen-targets.dir
+
+# All Build rule for target.
+CMakeFiles/clang-tablegen-targets.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-tablegen-targets.dir/build.make CMakeFiles/clang-tablegen-targets.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-tablegen-targets.dir/build.make CMakeFiles/clang-tablegen-targets.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num= "Built target clang-tablegen-targets"
+.PHONY : CMakeFiles/clang-tablegen-targets.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/clang-tablegen-targets.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/clang-tablegen-targets.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : CMakeFiles/clang-tablegen-targets.dir/rule
+
+# Convenience name for target.
+clang-tablegen-targets: CMakeFiles/clang-tablegen-targets.dir/rule
+.PHONY : clang-tablegen-targets
+
+# clean rule for target.
+CMakeFiles/clang-tablegen-targets.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-tablegen-targets.dir/build.make CMakeFiles/clang-tablegen-targets.dir/clean
+.PHONY : CMakeFiles/clang-tablegen-targets.dir/clean
+
+#=============================================================================
+# Target rules for target Utils/CMakeFiles/Utils.dir
+
+# All Build rule for target.
+Utils/CMakeFiles/Utils.dir/all:
+	$(MAKE) $(MAKESILENT) -f Utils/CMakeFiles/Utils.dir/build.make Utils/CMakeFiles/Utils.dir/depend
+	$(MAKE) $(MAKESILENT) -f Utils/CMakeFiles/Utils.dir/build.make Utils/CMakeFiles/Utils.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num= "Built target Utils"
+.PHONY : Utils/CMakeFiles/Utils.dir/all
+
+# Build rule for subdir invocation for target.
+Utils/CMakeFiles/Utils.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Utils/CMakeFiles/Utils.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : Utils/CMakeFiles/Utils.dir/rule
+
+# Convenience name for target.
+Utils: Utils/CMakeFiles/Utils.dir/rule
+.PHONY : Utils
+
+# clean rule for target.
+Utils/CMakeFiles/Utils.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Utils/CMakeFiles/Utils.dir/build.make Utils/CMakeFiles/Utils.dir/clean
+.PHONY : Utils/CMakeFiles/Utils.dir/clean
+
+#=============================================================================
+# Target rules for target Toolchains/CMakeFiles/SPIRV_Compiler.dir
+
+# All Build rule for target.
+Toolchains/CMakeFiles/SPIRV_Compiler.dir/all: Utils/CMakeFiles/Utils.dir/all
+	$(MAKE) $(MAKESILENT) -f Toolchains/CMakeFiles/SPIRV_Compiler.dir/build.make Toolchains/CMakeFiles/SPIRV_Compiler.dir/depend
+	$(MAKE) $(MAKESILENT) -f Toolchains/CMakeFiles/SPIRV_Compiler.dir/build.make Toolchains/CMakeFiles/SPIRV_Compiler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=9,10,11,12 "Built target SPIRV_Compiler"
+.PHONY : Toolchains/CMakeFiles/SPIRV_Compiler.dir/all
+
+# Build rule for subdir invocation for target.
+Toolchains/CMakeFiles/SPIRV_Compiler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Toolchains/CMakeFiles/SPIRV_Compiler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : Toolchains/CMakeFiles/SPIRV_Compiler.dir/rule
+
+# Convenience name for target.
+SPIRV_Compiler: Toolchains/CMakeFiles/SPIRV_Compiler.dir/rule
+.PHONY : SPIRV_Compiler
+
+# clean rule for target.
+Toolchains/CMakeFiles/SPIRV_Compiler.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Toolchains/CMakeFiles/SPIRV_Compiler.dir/build.make Toolchains/CMakeFiles/SPIRV_Compiler.dir/clean
+.PHONY : Toolchains/CMakeFiles/SPIRV_Compiler.dir/clean
+
+#=============================================================================
+# Target rules for target Graph/CMakeFiles/graph_connect.dir
+
+# All Build rule for target.
+Graph/CMakeFiles/graph_connect.dir/all:
+	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/depend
+	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=13,14 "Built target graph_connect"
+.PHONY : Graph/CMakeFiles/graph_connect.dir/all
+
+# Build rule for subdir invocation for target.
+Graph/CMakeFiles/graph_connect.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Graph/CMakeFiles/graph_connect.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
+.PHONY : Graph/CMakeFiles/graph_connect.dir/rule
+
+# Convenience name for target.
+graph_connect: Graph/CMakeFiles/graph_connect.dir/rule
+.PHONY : graph_connect
+
+# clean rule for target.
+Graph/CMakeFiles/graph_connect.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/clean
+.PHONY : Graph/CMakeFiles/graph_connect.dir/clean
 
 #=============================================================================
 # Target rules for target Examples/SIR/CMakeFiles/SIR_Example.dir
 
 # All Build rule for target.
-Examples/SIR/CMakeFiles/SIR_Example.dir/all:
+Examples/SIR/CMakeFiles/SIR_Example.dir/all: Utils/CMakeFiles/Utils.dir/all
+Examples/SIR/CMakeFiles/SIR_Example.dir/all: Toolchains/CMakeFiles/SPIRV_Compiler.dir/all
 	$(MAKE) $(MAKESILENT) -f Examples/SIR/CMakeFiles/SIR_Example.dir/build.make Examples/SIR/CMakeFiles/SIR_Example.dir/depend
 	$(MAKE) $(MAKESILENT) -f Examples/SIR/CMakeFiles/SIR_Example.dir/build.make Examples/SIR/CMakeFiles/SIR_Example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=9,10 "Built target SIR_Example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=7,8 "Built target SIR_Example"
 .PHONY : Examples/SIR/CMakeFiles/SIR_Example.dir/all
 
 # Build rule for subdir invocation for target.
 Examples/SIR/CMakeFiles/SIR_Example.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Examples/SIR/CMakeFiles/SIR_Example.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
 .PHONY : Examples/SIR/CMakeFiles/SIR_Example.dir/rule
@@ -319,10 +498,10 @@ Examples/SIR/CMakeFiles/SIR_Example.dir/clean:
 # Target rules for target Examples/PRNG/CMakeFiles/PRNG_Example.dir
 
 # All Build rule for target.
-Examples/PRNG/CMakeFiles/PRNG_Example.dir/all:
+Examples/PRNG/CMakeFiles/PRNG_Example.dir/all: Utils/CMakeFiles/Utils.dir/all
 	$(MAKE) $(MAKESILENT) -f Examples/PRNG/CMakeFiles/PRNG_Example.dir/build.make Examples/PRNG/CMakeFiles/PRNG_Example.dir/depend
 	$(MAKE) $(MAKESILENT) -f Examples/PRNG/CMakeFiles/PRNG_Example.dir/build.make Examples/PRNG/CMakeFiles/PRNG_Example.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=5,6 "Built target PRNG_Example"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=3,4 "Built target PRNG_Example"
 .PHONY : Examples/PRNG/CMakeFiles/PRNG_Example.dir/all
 
 # Build rule for subdir invocation for target.
@@ -345,15 +524,17 @@ Examples/PRNG/CMakeFiles/PRNG_Example.dir/clean:
 # Target rules for target Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir
 
 # All Build rule for target.
-Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/all: Graph/CMakeFiles/CLG_graph_connect.dir/all
+Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/all: Utils/CMakeFiles/Utils.dir/all
+Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/all: Toolchains/CMakeFiles/SPIRV_Compiler.dir/all
+Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/all: Graph/CMakeFiles/graph_connect.dir/all
 	$(MAKE) $(MAKESILENT) -f Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/build.make Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/depend
 	$(MAKE) $(MAKESILENT) -f Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/build.make Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=7,8 "Built target SIR_Bernoulli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=5,6 "Built target SIR_Bernoulli"
 .PHONY : Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/all
 
 # Build rule for subdir invocation for target.
 Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/arch/Documents/OpenCL-Graph/build/CMakeFiles 0
 .PHONY : Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/rule
@@ -371,10 +552,10 @@ Examples/SIR_Bernoulli/CMakeFiles/SIR_Bernoulli.dir/clean:
 # Target rules for target test/CMakeFiles/ERK4_test.dir
 
 # All Build rule for target.
-test/CMakeFiles/ERK4_test.dir/all:
+test/CMakeFiles/ERK4_test.dir/all: Utils/CMakeFiles/Utils.dir/all
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/ERK4_test.dir/build.make test/CMakeFiles/ERK4_test.dir/depend
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/ERK4_test.dir/build.make test/CMakeFiles/ERK4_test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=3,4 "Built target ERK4_test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/arch/Documents/OpenCL-Graph/build/CMakeFiles --progress-num=1,2 "Built target ERK4_test"
 .PHONY : test/CMakeFiles/ERK4_test.dir/all
 
 # Build rule for subdir invocation for target.

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/arch/Documents/PRNG/include -I/home/arch/Documents/OpenCL-Graph/Utils -I/home/arch/Documents/OpenCL-Graph/build/Utils -I/home/arch/Documents/OpenCL-Graph/Kernels/Epidemiological -I/home/arch/Documents/OpenCL-Graph/Graph
+CXX_INCLUDES = -I/home/arch/Documents/OpenCL-Graph/Utils -I/home/arch/Documents/OpenCL-Graph/build/Utils -I/home/arch/Documents/OpenCL-Graph/Kernels/Epidemiological -I/home/arch/Documents/OpenCL-Graph/Graph -I/home/arch/Documents/PRNG/include -I/home/arch/Documents/OpenCL-Graph/Toolchains
 
 CXX_FLAGS = -fopenmp
 

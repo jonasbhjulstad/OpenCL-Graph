@@ -162,42 +162,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-Graph/CMakeFiles/CLG_graph_connect.dir/rule:
-	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Graph/CMakeFiles/CLG_graph_connect.dir/rule
-.PHONY : Graph/CMakeFiles/CLG_graph_connect.dir/rule
+Graph/CMakeFiles/graph_connect.dir/rule:
+	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Graph/CMakeFiles/graph_connect.dir/rule
+.PHONY : Graph/CMakeFiles/graph_connect.dir/rule
 
 # Convenience name for target.
-CLG_graph_connect: Graph/CMakeFiles/CLG_graph_connect.dir/rule
-.PHONY : CLG_graph_connect
+graph_connect: Graph/CMakeFiles/graph_connect.dir/rule
+.PHONY : graph_connect
 
 # fast build rule for target.
-CLG_graph_connect/fast:
-	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/build
-.PHONY : CLG_graph_connect/fast
+graph_connect/fast:
+	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/build
+.PHONY : graph_connect/fast
 
-CLG_graph_connect.o: CLG_graph_connect.cpp.o
-.PHONY : CLG_graph_connect.o
+graph_connect.o: graph_connect.cpp.o
+.PHONY : graph_connect.o
 
 # target to build an object file
-CLG_graph_connect.cpp.o:
-	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/CLG_graph_connect.cpp.o
-.PHONY : CLG_graph_connect.cpp.o
+graph_connect.cpp.o:
+	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/graph_connect.cpp.o
+.PHONY : graph_connect.cpp.o
 
-CLG_graph_connect.i: CLG_graph_connect.cpp.i
-.PHONY : CLG_graph_connect.i
+graph_connect.i: graph_connect.cpp.i
+.PHONY : graph_connect.i
 
 # target to preprocess a source file
-CLG_graph_connect.cpp.i:
-	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/CLG_graph_connect.cpp.i
-.PHONY : CLG_graph_connect.cpp.i
+graph_connect.cpp.i:
+	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/graph_connect.cpp.i
+.PHONY : graph_connect.cpp.i
 
-CLG_graph_connect.s: CLG_graph_connect.cpp.s
-.PHONY : CLG_graph_connect.s
+graph_connect.s: graph_connect.cpp.s
+.PHONY : graph_connect.s
 
 # target to generate assembly for a file
-CLG_graph_connect.cpp.s:
-	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/CLG_graph_connect.cpp.s
-.PHONY : CLG_graph_connect.cpp.s
+graph_connect.cpp.s:
+	cd /home/arch/Documents/OpenCL-Graph/build && $(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/graph_connect.cpp.s
+.PHONY : graph_connect.cpp.s
 
 # Help Target
 help:
@@ -211,10 +211,10 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... CLG_graph_connect"
-	@echo "... CLG_graph_connect.o"
-	@echo "... CLG_graph_connect.i"
-	@echo "... CLG_graph_connect.s"
+	@echo "... graph_connect"
+	@echo "... graph_connect.o"
+	@echo "... graph_connect.i"
+	@echo "... graph_connect.s"
 .PHONY : help
 
 

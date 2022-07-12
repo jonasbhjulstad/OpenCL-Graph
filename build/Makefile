@@ -162,17 +162,95 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named CLG_graph_connect
+# Target rules for targets named intrinsics_gen
 
 # Build rule for target.
-CLG_graph_connect: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CLG_graph_connect
-.PHONY : CLG_graph_connect
+intrinsics_gen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 intrinsics_gen
+.PHONY : intrinsics_gen
 
 # fast build rule for target.
-CLG_graph_connect/fast:
-	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/CLG_graph_connect.dir/build.make Graph/CMakeFiles/CLG_graph_connect.dir/build
-.PHONY : CLG_graph_connect/fast
+intrinsics_gen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/intrinsics_gen.dir/build.make CMakeFiles/intrinsics_gen.dir/build
+.PHONY : intrinsics_gen/fast
+
+#=============================================================================
+# Target rules for targets named omp_gen
+
+# Build rule for target.
+omp_gen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 omp_gen
+.PHONY : omp_gen
+
+# fast build rule for target.
+omp_gen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/omp_gen.dir/build.make CMakeFiles/omp_gen.dir/build
+.PHONY : omp_gen/fast
+
+#=============================================================================
+# Target rules for targets named acc_gen
+
+# Build rule for target.
+acc_gen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 acc_gen
+.PHONY : acc_gen
+
+# fast build rule for target.
+acc_gen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/acc_gen.dir/build.make CMakeFiles/acc_gen.dir/build
+.PHONY : acc_gen/fast
+
+#=============================================================================
+# Target rules for targets named clang-tablegen-targets
+
+# Build rule for target.
+clang-tablegen-targets: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clang-tablegen-targets
+.PHONY : clang-tablegen-targets
+
+# fast build rule for target.
+clang-tablegen-targets/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/clang-tablegen-targets.dir/build.make CMakeFiles/clang-tablegen-targets.dir/build
+.PHONY : clang-tablegen-targets/fast
+
+#=============================================================================
+# Target rules for targets named Utils
+
+# Build rule for target.
+Utils: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Utils
+.PHONY : Utils
+
+# fast build rule for target.
+Utils/fast:
+	$(MAKE) $(MAKESILENT) -f Utils/CMakeFiles/Utils.dir/build.make Utils/CMakeFiles/Utils.dir/build
+.PHONY : Utils/fast
+
+#=============================================================================
+# Target rules for targets named SPIRV_Compiler
+
+# Build rule for target.
+SPIRV_Compiler: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SPIRV_Compiler
+.PHONY : SPIRV_Compiler
+
+# fast build rule for target.
+SPIRV_Compiler/fast:
+	$(MAKE) $(MAKESILENT) -f Toolchains/CMakeFiles/SPIRV_Compiler.dir/build.make Toolchains/CMakeFiles/SPIRV_Compiler.dir/build
+.PHONY : SPIRV_Compiler/fast
+
+#=============================================================================
+# Target rules for targets named graph_connect
+
+# Build rule for target.
+graph_connect: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 graph_connect
+.PHONY : graph_connect
+
+# fast build rule for target.
+graph_connect/fast:
+	$(MAKE) $(MAKESILENT) -f Graph/CMakeFiles/graph_connect.dir/build.make Graph/CMakeFiles/graph_connect.dir/build
+.PHONY : graph_connect/fast
 
 #=============================================================================
 # Target rules for targets named SIR_Example
@@ -238,11 +316,17 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... CLG_graph_connect"
+	@echo "... acc_gen"
+	@echo "... clang-tablegen-targets"
+	@echo "... intrinsics_gen"
+	@echo "... omp_gen"
 	@echo "... ERK4_test"
 	@echo "... PRNG_Example"
 	@echo "... SIR_Bernoulli"
 	@echo "... SIR_Example"
+	@echo "... SPIRV_Compiler"
+	@echo "... Utils"
+	@echo "... graph_connect"
 .PHONY : help
 
 
