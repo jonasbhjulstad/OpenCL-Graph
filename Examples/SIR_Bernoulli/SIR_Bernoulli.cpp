@@ -1,24 +1,15 @@
 #define CL_TARGET_OPENCL_VERSION 300
-#include <CLG.hpp>
-#include <CL/cl.h>
 #include <iostream>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string>
 #include <fstream>
-#include <cassert>
-#include <array>
 #include <random>
 #include <sstream>
-#include <cmath>
 #include <igraph/igraph.h>
 #include <igraph/igraph_games.h>
 #include <igraph/igraph_layout.h>
 #include <SIR_Bernoulli_Network.hpp>
-#include <chrono>
 #include <algorithm>
-#include <CLG_graph_connect.hpp>
+#include <graph_connect.hpp>
 #define SUCCESS 0
 #define FAILURE 1
 
@@ -41,7 +32,7 @@ int main(int argc, char *argv[])
     float bernoulli_p_R = .01;
     float p_ER_cluster = 0.0001;
     size_t N_clusters = 1;
-    std::ifstream param_file(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/params.txt");
+    std::ifstream param_file(std::string(CLG::DATA_DIR) + "/Bernoulli_Network/params.txt");
     if (param_file.is_open())
     {
         std::string line;
@@ -159,7 +150,7 @@ int main(int argc, char *argv[])
     }
     std::cout << "Compiling kernel with " << N_nodes << " nodes, " << N_edges << " edges and " << N_simulations << " simulations\nInfected: " << N_infected << std::endl;
     
-    CLG_Instance clInstance = clDefaultInitialize();
+    CLG::CL_Instance clInstance;
     char device_name[100];
     clGetDeviceInfo(clInstance.device_ids[0], CL_DEVICE_NAME, sizeof(char)*100, device_name, NULL);
     std::cout << "Using device: " << device_name << std::endl;
@@ -172,7 +163,7 @@ int main(int argc, char *argv[])
     size_t N_workers = (N_simulations > max_work_group_size) ? max_work_group_size : N_simulations;
     size_t N_runs = (N_simulations > max_work_group_size) ? ((int)N_simulations/max_work_group_size): 1;
     SIR_Bernoulli_Network_Kernel kernel(N_workers);
-    kernel.compile(N_nodes, N_edges, Nt);
+    kernel.compile(N_nodes, N_edges, Nt, CLCPP::PRNG_TYPE_ISAAC);
     
     //print available cl devices
 
@@ -203,8 +194,6 @@ int main(int argc, char *argv[])
 
 
 
-    // cl_mem outputBuffer = clCreateBuffer(clInstance.context, CL_MEM_WRITE_ONLY, outputBufferSize, NULL, &err);
-    // assert(err == CL_SUCCESS);
     assert(kernel.create_cl_kernel(clInstance.program) == CL_SUCCESS);
 
     cl_int err;
@@ -253,7 +242,7 @@ void write_graph_structure(igraph_t& graph, size_t N_nodes, size_t N_edges)
     igraph_layout_gem(&graph, &pos, false, 500, N_nodes, 1/10.f, sqrt(N_nodes));
     //write pos to file
     std::ofstream f;
-    f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/pos.csv");
+    f.open(std::string(CLG::DATA_DIR) + "/Bernoulli_Network/pos.csv");
     for (int i = 0; i < N_nodes; i++)
     {
         f << MATRIX(pos,i,0) << "," << MATRIX(pos,i,1) << "\n";
@@ -261,13 +250,13 @@ void write_graph_structure(igraph_t& graph, size_t N_nodes, size_t N_edges)
     f.close();
 
     // //write edges to file
-    f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/edges.csv");
+    f.open(std::string(CLG::DATA_DIR) + "/Bernoulli_Network/edges.csv");
     // for (int i = 0; i < N_edges; i++)
     // {
     //     f << edges_to[i] << " " << edges_from[i] << " {} \n";
     // }
     // f.close();
-    FILE* file = fopen((std::string(CLG_DATA_DIR) + "/Bernoulli_Network/edges.csv").c_str(), "w");
+    FILE* file = fopen((std::string(CLG::DATA_DIR) + "/Bernoulli_Network/edges.csv").c_str(), "w");
     igraph_write_graph_edgelist(&graph, file);
     fclose(file);
 }
@@ -278,7 +267,7 @@ void write_trajectories(std::vector<cl_uint>& x_traj, std::vector<cl_uint>& v_tr
     std::ofstream f;
     for (cl_uint i = 0; i < N_workers; i++)
     {
-        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/v_traj_" + std::to_string(i) + ".csv");
+        f.open(std::string(CLG::DATA_DIR) + "/Bernoulli_Network/v_traj_" + std::to_string(i) + ".csv");
         for (cl_uint j = 0; j < Nt; j++)
         {
             f << v_traj[i*N_nodes*Nt + j*N_nodes];
@@ -294,7 +283,7 @@ void write_trajectories(std::vector<cl_uint>& x_traj, std::vector<cl_uint>& v_tr
     //write the state of each node to separate files
     for (cl_uint i = 0; i < N_nodes; i++)
     {
-        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/v_" + std::to_string(N_workers +i) + ".csv");
+        f.open(std::string(CLG::DATA_DIR) + "/Bernoulli_Network/v_" + std::to_string(i) + ".csv");
         for (cl_uint j = 0; j < Nt; j++)
         {
             for (cl_uint k = 0; k < N_workers; k++)
@@ -315,7 +304,7 @@ void write_trajectories(std::vector<cl_uint>& x_traj, std::vector<cl_uint>& v_tr
     // }
     for (cl_uint i = 0; i < N_workers; i++)
     {
-        f.open(std::string(CLG_DATA_DIR) + "/Bernoulli_Network/x_traj_" + std::to_string(N_workers + i) + ".csv");
+        f.open(std::string(CLG::DATA_DIR) + "/Bernoulli_Network/x_traj_" + std::to_string(i) + ".csv");
         for (cl_uint j = 0; j < Nt; j++)
         {
             f << x_traj[3*j + i*3*Nt] << "," << x_traj[3*j + 1 + i*3*Nt] << "," << x_traj[3*j + 2 + i*3*Nt] << "\n";

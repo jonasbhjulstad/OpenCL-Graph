@@ -11,25 +11,27 @@
 #include <cmath>
 #define SUCCESS 0
 #define FAILURE 1
-#include <CLG.hpp>
+#include <Utils.hpp>
+#include <CLCPP_PRNG/CLCPP_PRNG.hpp>
 
 
-void CompileExecuteWithGenerator(CLG_Instance& clInstance, CLG_PRNG_TYPE rng_type)
+void compile_execute_with_generator(CLG::CL_Instance& clInstance, CLCPP::PRNG_TYPE rng_type)
 {
-    std::string pwd = std::string(CLG_ROOT_DIR) + "/Examples/";
-    std::string PRNG_example_kernel = std::string(CLG_KERNEL_DIR) + "Examples/PRNG/PRNG.cl";
+    using namespace CLCPP;
+    std::string pwd = std::string(CLG::ROOT_DIR) + "/Examples/";
+    std::string PRNG_example_kernel = std::string(CLG::KERNEL_DIR) + "Examples/PRNG/PRNG.cl";
 
-    std::string cl_generator_dir = CLG_GENERATOR_DIR;
+    std::string cl_generator_dir = CLG::GENERATOR_DIR;
     std::string build_options = "-I " + cl_generator_dir;
-    build_options += " -I " + std::string(CLG_KERNEL_DIR) + "Distributions/";
+    build_options += " -I " + std::string(CLG::KERNEL_DIR) + "Distributions/";
     
     size_t Nfloat_generated = 1024;
     build_options += " -DPRNG_N_SAMPLES=" + std::to_string(Nfloat_generated);
 
-    std::string prependData = CLG_Configure_Generator(rng_type);
+    std::string prependData = configure_generator(rng_type);
 
     int err = 0;
-    clInstance.program = clLoadProgram(PRNG_example_kernel.c_str(), clInstance.context, err, prependData);
+    clInstance.program = CLG::clLoadProgram(PRNG_example_kernel.c_str(), clInstance.context, err, prependData);
 
     assert(err == CL_SUCCESS);
 
@@ -79,13 +81,13 @@ void CompileExecuteWithGenerator(CLG_Instance& clInstance, CLG_PRNG_TYPE rng_typ
     assert(status == CL_SUCCESS);
 
     std::ofstream outfile;
-    outfile.open(std::string(CLG_DATA_DIR) + "/PRNG/result_" + CLG_PRNG_strmap.at(rng_type) + ".csv");
-    // std::cout << std::string(CLG_DATA_DIR) + "/PRNG/result_" + CLG_PRNG_strmap.at(rng_type) + ".csv" << std::endl;
+    outfile.open(std::string(CLG::DATA_DIR) + "/PRNG/result_" + PRNG_strmap.at(rng_type) + ".csv");
+    // std::cout << std::string(CLG::DATA_DIR) + "/PRNG/result_" + PRNG_strmap.at(rng_type) + ".csv" << std::endl;
     std::mt19937 rng;
     std::uniform_int_distribution<cl_uint> dist(0, UINT32_MAX);
 
     size_t N_runs = 4;
-    std::cout << "Generating numbers for " << CLG_PRNG_strmap.at(rng_type) << std::endl;
+    std::cout << "Generating numbers for " << PRNG_strmap.at(rng_type) << std::endl;
     for (int i = 0; i < N_runs; i++)
     {
         for (int j = 0; j < workgroupSize; j++)
@@ -121,33 +123,33 @@ void CompileExecuteWithGenerator(CLG_Instance& clInstance, CLG_PRNG_TYPE rng_typ
 
 int main(int argc, char *argv[])
 {
+    using namespace CLCPP;
+    CLG::CL_Instance clInstance;
 
-    CLG_Instance clInstance = clDefaultInitialize();
+    std::vector<PRNG_TYPE> rng_types = {
+    PRNG_TYPE_ISAAC,
+    // PRNG_TYPE_KISS09,
+    PRNG_TYPE_KISS99,
+    // PRNG_TYPE_LCG12864,
+    PRNG_TYPE_LCG6432,
+    PRNG_TYPE_LFIB,
+    PRNG_TYPE_MRG31K3P,
+    PRNG_TYPE_MRG63K3A,
+    PRNG_TYPE_MSWS,
+    PRNG_TYPE_MT19937,
+    PRNG_TYPE_MWC64X,
+    PRNG_TYPE_PCG6432,
+    PRNG_TYPE_PHILOX2X32_10,
+    PRNG_TYPE_RAN2,
+    PRNG_TYPE_TINYMT32,
+    PRNG_TYPE_TINYMT64,
+    PRNG_TYPE_WELL512,
+    // PRNG_TYPE_XORSHIFT1024,
+    PRNG_TYPE_XORSHIFT6432STAR};
 
-    std::vector<CLG_PRNG_TYPE> rng_types = {
-    CLG_PRNG_TYPE_ISAAC,
-    // CLG_PRNG_TYPE_KISS09,
-    CLG_PRNG_TYPE_KISS99,
-    // CLG_PRNG_TYPE_LCG12864,
-    CLG_PRNG_TYPE_LCG6432,
-    CLG_PRNG_TYPE_LFIB,
-    CLG_PRNG_TYPE_MRG31K3P,
-    CLG_PRNG_TYPE_MRG63K3A,
-    CLG_PRNG_TYPE_MSWS,
-    CLG_PRNG_TYPE_MT19937,
-    CLG_PRNG_TYPE_MWC64X,
-    CLG_PRNG_TYPE_PCG6432,
-    CLG_PRNG_TYPE_PHILOX2X32_10,
-    CLG_PRNG_TYPE_RAN2,
-    CLG_PRNG_TYPE_TINYMT32,
-    CLG_PRNG_TYPE_TINYMT64,
-    CLG_PRNG_TYPE_WELL512,
-    // CLG_PRNG_TYPE_XORSHIFT1024,
-    CLG_PRNG_TYPE_XORSHIFT6432STAR};
-
-    for (CLG_PRNG_TYPE rng_type: rng_types)
+    for (PRNG_TYPE rng_type: rng_types)
     {
-        CompileExecuteWithGenerator(clInstance, rng_type);
+        compile_execute_with_generator(clInstance, rng_type);
     }
 
     return SUCCESS;

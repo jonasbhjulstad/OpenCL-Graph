@@ -1,5 +1,0 @@
-__kernel void foo()
-{
-    float a = 1.f;
-    printf("%f\n", a);
-}

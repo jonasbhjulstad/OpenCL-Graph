@@ -11,11 +11,10 @@
 #include <cmath>
 #define SUCCESS 0
 #define FAILURE 1
-#include <CLG.hpp>
+#include <Utils.hpp>
+#include <CFE_SPIRV_Compiler.hpp>
+#include <CLCPP_PRNG/CLCPP_PRNG.hpp>
 
-#ifndef CLG_SPIRV_COMPILER
-#define CLG_SPIRV_COMPILER "clang-14"
-#endif
 
 void write_SIR_trajectories(std::ofstream &outfile, float *x_traj, size_t Nt, size_t N_SingleRun_Trajectories)
 {
@@ -30,35 +29,28 @@ void write_SIR_trajectories(std::ofstream &outfile, float *x_traj, size_t Nt, si
     }
 }
 
-std::string kernel_file = std::string(CLG_KERNEL_DIR) + "/Epidemiological/SIR_Compute_Stochastic";
+std::string kernel_file = std::string(CLG::KERNEL_DIR) + "/Epidemiological/SIR_Compute_Stochastic";
 
 
-void compile_kernel(size_t Nt, float SIR_Binomial_Tolerance = 1e-2, CLG_PRNG_TYPE prng_type = CLG_PRNG_TYPE_KISS99)
+void compile_kernel(size_t Nt, float SIR_Binomial_Tolerance = 1e-2, CLCPP::PRNG_TYPE prng_type = CLCPP::PRNG_TYPE_KISS99)
 {
-    std::string spirv_compile_command = std::string(CLG_SPIRV_COMPILER) + " -c -target64 -cl-kernel-arg-info -cl-std=clc++2021 " + kernel_file + ".clcpp -o " + kernel_file + ".spv";
-    std::string preprocessor_definitions = " -D PRNG_generator=" + CLG_PRNG_class_strmap.at(prng_type) + 
-     + " -D SIR_Binomial_Tolerance=" + std::to_string(SIR_Binomial_Tolerance) + "f"
-     " -D N_TRAJECTORY_TIMESTEPS=" + std::to_string(Nt);
+    std::vector<const char*> preprocessor_definitions = {("PRNG_generator=" + CLCPP::PRNG_class_strmap.at(prng_type)).c_str(), 
+     ("SIR_Binomial_Tolerance=" + std::to_string(SIR_Binomial_Tolerance)).c_str(),
+     ("N_TRAJECTORY_TIMESTEPS=" + std::to_string(Nt)).c_str()};
 
-    std::string kernel_include_directories = " -I " + std::string(CLG_KERNEL_DIR) + "/Distributions/" + 
-    " -I " + std::string(CLG_GENERATOR_DIR) + 
-    " -I " + std::string(CLG_KERNEL_DIR) + "/Epidemiological/";
-
-
-    int res = std::system((spirv_compile_command + preprocessor_definitions + kernel_include_directories).c_str());
-    std::cout << "system Error code: " << res << std::endl;
+    std::vector<const char*> kernel_include_directories = {CLG::KERNEL_DIR, CLG::GENERATOR_DIR, (std::string(CLG::KERNEL_DIR)+ "/Epidemiological/").c_str()};
 }
 
 
 int main(int argc, char *argv[])
 {
 
-    std::string DATA_PATH = CLG_DATA_DIR;
-    std::string cl_generator_dir = CLG_GENERATOR_DIR;
-    std::string pwd = std::string(CLG_ROOT_DIR) + "/Examples/";
-    std::string epidemiological_kernel_dir = std::string(CLG_KERNEL_DIR) + "/Epidemiological/";
+    std::string DATA_PATH = CLG::DATA_DIR;
+    std::string cl_generator_dir = CLG::GENERATOR_DIR;
+    std::string pwd = std::string(CLG::ROOT_DIR) + "/Examples/";
+    std::string epidemiological_kernel_dir = std::string(CLG::KERNEL_DIR) + "/Epidemiological/";
 
-    CLG_Instance clInstance = clDefaultInitialize();
+    CLG::CL_Instance clInstance;
 
     std::string kernel_file = epidemiological_kernel_dir + "SIR_Compute_Stochastic";
 
@@ -67,7 +59,7 @@ int main(int argc, char *argv[])
     compile_kernel(Nt);
 
     int err = 0;
-    std::string programBinary = convertToString((kernel_file + ".spv").c_str());
+    std::string programBinary = CLG::convertToString((kernel_file + ".spv").c_str());
     long unsigned int programSize = sizeof(char)*programBinary.length();
 
 
@@ -77,7 +69,7 @@ int main(int argc, char *argv[])
     std::string build_options = "-I " + cl_generator_dir + " -I " + epidemiological_kernel_dir;
     /*Step 6: Build program. */
     int status = clBuildProgram(clInstance.program, 1, clInstance.device_ids.data(), build_options.c_str(), NULL, NULL);
-    CLG_print_build_log(status, clInstance);
+    CL_print_build_log(status, clInstance);
     /* Parameter/Buffer initialization */
     constexpr size_t N_trajectories = 10 * 1024;
     size_t N_SingleRun_Trajectories = (N_trajectories > clInstance.max_work_group_size) ? clInstance.max_work_group_size : N_trajectories;

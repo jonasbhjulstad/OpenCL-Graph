@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-data_path = "/home/deb/Documents/OpenCL-Graph/build/data/"
+data_path = "/home/arch/Documents/OpenCL-Graph/build/data/Bernoulli_Network/"
 
 x_traj_csv = np.genfromtxt(data_path + "x_traj.csv", delimiter=", ")
 

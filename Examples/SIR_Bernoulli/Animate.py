@@ -14,7 +14,7 @@ def scale(x):
     return int(x*255/N_simulations)
 def scalevec(x_vec):
     return (scale(x) for x in x_vec)
-data_path = "/home/deb/Documents/OpenCL-Graph/build/data/Bernoulli_Network/"
+data_path = "/home/arch/Documents/OpenCL-Graph/build/data/Bernoulli_Network/"
 
 v_trajs = [pd.read_csv(data_path + "v_traj_" + str(i) + ".csv") for i in range(N_simulations)]
 N_nodes = v_trajs[0].shape[1]

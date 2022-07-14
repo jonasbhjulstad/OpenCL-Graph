@@ -1,0 +1,11 @@
+#ifndef CLG_FILE_PATHS_HPP
+#define CLG_FILE_PATHS_HPP
+
+namespace CLG {
+const char *KERNEL_DIR = "@CLG_KERNEL_DIR@";
+const char *GENERATOR_DIR = "@CLG_GENERATOR_DIR@";
+const char *DATA_DIR = "@CLG_DATA_DIR@";
+const char *ROOT_DIR = "@CMAKE_SOURCE_DIR@";
+const char *TEST_DIR = "@CLG_TEST_DIR@";
+} // namespace CLG
+#endif

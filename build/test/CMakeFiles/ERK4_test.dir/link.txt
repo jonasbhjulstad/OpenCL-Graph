@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/ERK4_test.dir/ERK4_test.cpp.o -o ERK4_test  -Wl,-rpath,/usr/local/lib /usr/local/lib/libOpenCL.so 

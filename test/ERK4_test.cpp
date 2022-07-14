@@ -3,47 +3,23 @@
 #include <CL/cl.h>
 #include <iostream>
 #include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include <string>
 #include <fstream>
-#include <cassert>
 #include <array>
 #include <random>
 #include <sstream>
-#include <cmath>
+#include <cassert>
+#include <Utils.hpp>
 #define SUCCESS 0
 #define FAILURE 1
 
-struct CLG_Instance
-{
-    cl_uint numPlatforms;
-    cl_platform_id platform;
-    cl_uint numDevices = 0;
-    std::vector<cl_device_id> device_ids;
-    cl_context context;
-    cl_command_queue commandQueue;
-    cl_program program;
-	size_t global_mem_size;
-	size_t global_mem_cache_size;
-	size_t max_work_group_size;
-};
-
-/* convert the kernel file into a string */
-std::string convertToString(const char *filename)
-{	
-	std::ifstream t(filename);
-	std::stringstream buffer;
-	buffer << t.rdbuf();
-	return buffer.str();
-}
 
 const char pwd[] = "/home/deb/Documents/OpenCL-Graph/test/";
 
 int main(int argc, char *argv[])
 {
 
-    CLG_Instance clInstance;
+    CLG::CL_Instance clInstance;
 	cl_uint numPlatforms; //the NO. of platforms
 	cl_int status = clGetPlatformIDs(0, NULL, &numPlatforms);
 
@@ -77,7 +53,7 @@ int main(int argc, char *argv[])
 	
 
     int err = 0;
-    std::string programBinary = convertToString((std::string(pwd) + "ERK.spv").c_str());
+    std::string programBinary = CLG::convertToString((std::string(pwd) + "ERK.spv").c_str());
     long unsigned int programSize = sizeof(char)*programBinary.length();
     clInstance.program = clCreateProgramWithIL(clInstance.context, (const void*) programBinary.data(), sizeof(char)*programBinary.length(), &err);
     assert(err == CL_SUCCESS);

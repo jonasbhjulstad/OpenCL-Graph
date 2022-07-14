@@ -1,4 +1,4 @@
-set(CLG_PRNG_TYPE tinymt32)
+set(PRNG_TYPE tinymt32)
 add_subdirectory(Distributions)
 add_subdirectory(Epidemiological)
 add_subdirectory(Integrators)

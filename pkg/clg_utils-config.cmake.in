@@ -1,5 +1,0 @@
-# Import the targets.
-include("@OpenCL_Graph_BINARY_DIR@/Utils/clg_utils-targets.cmake")
-
-# Report other information.
-set(OpenCL_Graph_INCLUDE_DIRS "@OpenCL_Graph_SOURCE_DIR@")
